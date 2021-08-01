@@ -117,9 +117,9 @@ class BaseCoach:
         l2_loss_val = 1.0  # HYUNG-KWON KO CHANGED
         loss_lpips = 1.0  # HYUNG-KWON KO CHANGED
 
-        # from torch.nn import L1Loss
-        # l1_criterion = L1Loss()
-        # loss += l1_criterion(generated_images, real_images)
+        from torch.nn import L1Loss
+        l1_criterion = L1Loss()
+        loss += l1_criterion(generated_images, real_images)
 
         if hyperparameters.pt_l2_lambda > 0:
             l2_loss_val = l2_loss.l2_loss(generated_images, real_images)

@@ -6,8 +6,8 @@ import torch
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="sefa")
     parser.add_argument("--out", type=str, default="factor.pt", help="name of the result factor file")
-    parser.add_argument("--ckpt", type=str, default="pretrained_models/webtoon001693.pkl", help="model checkpoint")
-    # parser.add_argument("--ckpt", type=str, default="checkpoints/model_RKJBGNOQHLMZ_336944_15.pkl", help="model checkpoint")
+    # parser.add_argument("--ckpt", type=str, default="pretrained_models/webtoon001693.pkl", help="model checkpoint")
+    parser.add_argument("--ckpt", type=str, default='../stylegan2-ada-pytorch/results/00005-webtoon_3channel-webtoon256-bgcfnc-resumeffhq256/models/network-snapshot-007338.pkl', help="model checkpoint")
     
     args = parser.parse_args()
 

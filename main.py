@@ -17,8 +17,8 @@ use_multi_id_training = False
 global_config.device = 'cuda'
 paths_config.input_data_id = image_dir_name
 paths_config.input_data_path = f'{image_dir_name}_original'
-# paths_config.stylegan2_ada_ffhq = '../stylegan2-ada-pytorch/results/00005-webtoon_3channel-webtoon256-bgcfnc-resumeffhq256/models/network-snapshot-007338.pkl'
-paths_config.stylegan2_ada_ffhq = f'{save_path}/network-snapshot-007338.pkl'
+paths_config.stylegan2_ada_ffhq = '../stylegan2-ada-pytorch/results/00005-webtoon_3channel-webtoon256-bgcfnc-resumeffhq256/models/network-snapshot-007338.pkl'
+# paths_config.stylegan2_ada_ffhq = f'{save_path}/network-snapshot-007338.pkl'
 paths_config.checkpoints_dir = 'checkpoints'
 paths_config.style_clip_pretrained_mappers = 'pretrained_models'
 
