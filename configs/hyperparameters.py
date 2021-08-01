@@ -1,5 +1,5 @@
 ## Architechture
-lpips_type = 'alex'
+lpips_type = 'vgg'
 first_inv_type = 'w'
 optim_type = 'adam'
 

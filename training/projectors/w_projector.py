@@ -139,4 +139,5 @@ def project(
                 buf *= buf.square().mean().rsqrt()
 
     del G
-    return w_opt.repeat([1, 18, 1])
+    return w_opt.repeat([1, 14, 1])  # for 256
+    # return w_opt.repeat([1, 18, 1])
