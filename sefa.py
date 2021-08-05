@@ -6,7 +6,7 @@ import argparse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="sefa")
     parser.add_argument("--feature", default='all', choices=['low', 'middle', 'high', 'all'])
-    parser.add_argument("--mtype", default='default', choices=['default', 'mixing', 'xflip'])
+    parser.add_argument("--mtype", default='xflip', choices=['default', 'mixing', 'xflip'])
 
     args = parser.parse_args()
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     elif args.mtype == 'mixing':
         ckpt = os.path.join('pretrained_models', 'network-snapshot-mixing-010080.pkl')
     elif args.mtype == 'xflip':
-        ckpt = os.path.join('pretrained_models', 'network-snapshot-xflip-004273.pkl')
+        ckpt = os.path.join('pretrained_models', 'network-snapshot-xflip-017095.pkl')
     else:
         raise AssertionError('check pretrained model type')
 

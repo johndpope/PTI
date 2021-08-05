@@ -5,8 +5,9 @@ from PIL import Image
 from configs import paths_config, hyperparameters, global_config
 from scripts.run_pti import run_PTI
 
-ix = [0]
-degrees = [-6, -4, -2, 0, 2, 4, 6]
+ix = [0, 1, 2, 3, 4]
+# degrees = [-6, -4, -2, 0, 2, 4, 6]
+degrees = [-3, -2, -1, 0, 1, 2, 3]
 
 save_path = 'pretrained_models'
 image_dir_name = 'image'
@@ -19,10 +20,10 @@ paths_config.input_data_id = image_dir_name
 paths_config.input_data_path = f'{image_dir_name}_original'
 paths_config.checkpoints_dir = 'checkpoints'
 
-paths_config.stylegan2_ada_ffhq = os.path.join(save_path, 'network-snapshot-008467.pkl')
-factor_path = os.path.join(save_path, 'default-all.pt')
-# paths_config.stylegan2_ada_ffhq = os.path.join(save_path, 'network-snapshot-xflip-004273.pkl')
-# factor_path = os.path.join(save_path, 'xflip-all.pt')
+# paths_config.stylegan2_ada_ffhq = os.path.join(save_path, 'network-snapshot-008467.pkl')
+# factor_path = os.path.join(save_path, 'default-all.pt')
+paths_config.stylegan2_ada_ffhq = os.path.join(save_path, 'network-snapshot-xflip-017095.pkl')
+factor_path = os.path.join(save_path, 'xflip-all.pt')
 # paths_config.stylegan2_ada_ffhq = os.path.join(save_path, 'network-snapshot-mixing-010080.pkl')
 # factor_path = os.path.join(save_path, 'mixing-all.pt')
 
@@ -30,6 +31,7 @@ hyperparameters.use_last_w_pivots = False
 hyperparameters.max_pti_steps = 350
 hyperparameters.pti_learning_rate = 3e-4
 hyperparameters.pt_lpips_lambda = 1
+hyperparameters.pt_lpips_layers = [0, 1, 2, 3]
 
 
 def save_image(img, name):
