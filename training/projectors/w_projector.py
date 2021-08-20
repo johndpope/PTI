@@ -69,7 +69,12 @@ def project(
     target_images = target.unsqueeze(0).to(device).to(torch.float32)
     if target_images.shape[2] > 256:
         target_images = F.interpolate(target_images, size=(256, 256), mode='area')
+
+    # print("target_images min: ", target_images.min())
+    # print("target_images max: ", target_images.max())
     target_features = vgg16(target_images, resize_images=False, return_lpips=True)
+    # print("target_features: ", target_features.min())
+    # print("target_features: ", target_features.max())
 
     w_opt = torch.tensor(start_w, dtype=torch.float32, device=device,
                          requires_grad=True)  # pylint: disable=not-callable
@@ -98,14 +103,29 @@ def project(
         ws = (w_opt + w_noise).repeat([1, G.mapping.num_ws, 1])
         synth_images = G.synthesis(ws, noise_mode='const', force_fp32=True)
 
+        # print("synth_images min: ", synth_images.min())
+        # print("synth_images max: ", synth_images.max())
+
         # Downsample image to 256x256 if it's larger than that. VGG was built for 224x224 images.
         synth_images = (synth_images + 1) * (255 / 2)
+        # synth_images -= synth_images.min().item()
+        # synth_images /= synth_images.max().item() * 255
+
         if synth_images.shape[2] > 256:
             synth_images = F.interpolate(synth_images, size=(256, 256), mode='area')
+
+        # print("synth_images min: ", synth_images.min())
+        # print("synth_images max: ", synth_images.max())
+
 
         # Features for synth images.
         synth_features = vgg16(synth_images, resize_images=False, return_lpips=True)
         dist = (target_features - synth_features).square().sum()
+
+        # print("synth_features min: ", synth_features.min())
+        # print("synth_features max: ", synth_features.max())
+        # exit()
+
 
         # Noise regularization.
         reg_loss = 0.0
@@ -139,4 +159,5 @@ def project(
                 buf *= buf.square().mean().rsqrt()
 
     del G
-    return w_opt.repeat([1, 18, 1])
+    return w_opt.repeat([1, 14, 1])  # for 256
+    # return w_opt.repeat([1, 18, 1])

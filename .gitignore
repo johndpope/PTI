@@ -1,1 +1,8 @@
+pretrained_models/
+# image_original/
+image_processed/
+__pycache__/
+embeddings/
+results/
+checkpoints/
 
