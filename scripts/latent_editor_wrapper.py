@@ -9,7 +9,9 @@ class LatentEditorWrapper:
 
         self.interfacegan_directions = {'age': f'{paths_config.interfacegan_age}',
                                         'smile': f'{paths_config.interfacegan_smile}',
-                                        'rotation': f'{paths_config.interfacegan_rotation}'}
+                                        'rotation': f'{paths_config.interfacegan_rotation}',
+                                        'eyeglasses': f'{paths_config.interfacegan_eyeglasses}'}
+                                        
         self.interfacegan_directions_tensors = {name: torch.load(path).cuda() for name, path in
                                                 self.interfacegan_directions.items()}
         self.ganspace_pca = torch.load(f'{paths_config.ffhq_pca}')
@@ -36,7 +38,7 @@ class LatentEditorWrapper:
 
     def get_single_interface_gan_edits(self, start_w, factors):
         latents_to_display = {}
-        for direction in ['rotation', 'smile', 'age']:
+        for direction in ['rotation', 'smile', 'age','eyeglasses']:
             for factor in factors:
                 if direction not in latents_to_display:
                     latents_to_display[direction] = {}

@@ -1,1 +1,10 @@
-
+checkpoints
+*.pt
+shape_pred*.*
+*.pyc
+*.pkl
+*.dat
+*.zip
+*.pth
+DELETE
+StyleCLIP_results

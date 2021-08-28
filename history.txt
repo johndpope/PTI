@@ -1,0 +1,3911 @@
+    1  ls
+    2  ./gitkraken
+    3  sudo apt-get update
+    4  sudo apt-get install \\n    apt-transport-https \\n    ca-certificates \\n    curl \\n    gnupg-agent \\n    software-properties-common
+    5  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    6  sudo apt-get update
+    7  sudo apt-get install docker-ce docker-ce-cli containerd.io
+    8  cd ..
+    9  cd Documents/gitWorkspace
+   10  git clone git@github.com:NVlabs/stylegan2-ada.git
+   11  cd stylegan2-ada
+   12  docker build --tag stylegan2ada:latest .
+   13  docker
+   14  docker start
+   15  docker build --tag stylegan2ada:latest .
+   16  sudo groupadd docker
+   17  sudo usermod -aG docker ${USER}
+   18  su -s ${USER}
+   19  cd Documents
+   20  cd gitWorkspace
+   21  l
+   22  cd stylegan2-ada
+   23  l
+   24  ls
+   25  docker build --tag stylegan2ada:latest .
+   26  /usr/bin/python -m pip install --upgrade pip
+   27  python -m pip install --upgrade pip
+   28  conda
+   29  nvidia-smi
+   30  ls
+   31  cd ..
+   32  ls
+   33  cd ..
+   34  ls
+   35  cd ..
+   36  cd Downloads
+   37  ls
+   38  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   39  chmod +x Miniconda3-latest-Linux-x86_64.sh
+   40  ./Miniconda3-latest-Linux-x86_64.sh
+   41  conda init
+   42  code ~/.zshrc
+   43  code ~/.bashrc
+   44  ls
+   45  conda
+   46  ls
+   47  cd ..
+   48  cd Documents
+   49  l
+   50  cd gitWorkspace
+   51  l
+   52  cat install\ cuda.sh
+   53  cd stylegan2-ada
+   54  l
+   55  docker build --tag stylegan2ada:latest .
+   56  docker run --gpus all -it --rm -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n    "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache python3 generate.py --trunc=1 --seeds=85,265,297,849 \\n    --outdir=out --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl)"
+   57  nvidia-smi
+   58  nvidia-container-cli -V
+   59  nvidia-container-toolkit
+   60  sudo apt-get nvidia-container-toolkit
+   61  sudo apt-get install nvidia-container-toolkit
+   62  systemctl restart dockerd
+   63  sudo systemctl restart docker
+   64  docker run --gpus all -it --rm -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n    "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache python3 generate.py --trunc=1 --seeds=85,265,297,849 \\n    --outdir=out --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl)"
+   65  code .
+   66  nvidia-smi
+   67  cd ..
+   68  ls
+   69  cd stylegan2
+   70  ls
+   71  code .
+   72  cd ..
+   73  cd stylegan2-ada
+   74  code .
+   75  cd ..
+   76  ls
+   77  cd stylegan2
+   78  cd ..
+   79  cd stylegan2-2
+   80  l
+   81  code .
+   82  docker build --tag toonify:latest .
+   83  nvcc test_nvcc.cu -o test_nvcc -run
+   84  docker run toonify:latest
+   85  nvidia-docker run toonify:latest
+   86  docker run --gpus all -it --rm -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n    "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache python3 generate.py --trunc=1 --seeds=85,265,297,849 \\n    --outdir=out --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl)"
+   87  ls
+   88  cd ..
+   89  cd Documents
+   90  cd gitWorkspace
+   91  cd stylegan2-2
+   92  l
+   93  docker run --gpus all -it --rm -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n    "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache python3 project_images.py --trunc=1 --seeds=85,265,297,849 \\n    --outdir=out --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl)"
+   94  ls
+   95  wget https://upload.wikimedia.org/wikipedia/commons/6/6d/Shinz%C5%8D_Abe_Official.jpg -O raw/example.jpg
+   96  wget https://upload.wikimedia.org/wikipedia/commons/6/6d/Shinz%C5%8D_Abe_Official.jpg -O ./raw/example.jpg
+   97  wget
+   98  wget https://upload.wikimedia.org/wikipedia/commons/6/6d/Shinz%C5%8D_Abe_Official.jpg -O example.jpg
+   99  ls
+  100  mkdir raw
+  101  wget https://upload.wikimedia.org/wikipedia/commons/6/6d/Shinz%C5%8D_Abe_Official.jpg -O ./raw/example.jpg
+  102  python align_images.py raw aligned
+  103  code .
+  104  docker run --gpus all -it --rm -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash 
+  105  sudo apt-get install dkms\ngit clone https://github.com/rohitpid/Linux-Magic-Trackpad-2-Driver.git\ncd Linux-Magic-Trackpad-2-Driver/scripts\nchmod u+x install.sh\nsudo ./install.sh
+  106  nvidia-smi
+  107  ls
+  108  cd Documents
+  109  l
+  110  cd gitWorkspace
+  111  ls
+  112  cd stylegan2-ada
+  113  l
+  114  cat README.md
+  115  code .
+  116  sudo apt-get install nvidia-container-runtime
+  117  sudo mkdir -p /etc/systemd/system/docker.service.d
+  118  sudo tee /etc/systemd/system/docker.service.d/override.conf <<EOF\n[Service]\nExecStart=\nExecStart=/usr/bin/dockerd --host=fd:// --add-runtime=nvidia=/usr/bin/nvidia-container-runtime\nEOF
+  119  sudo systemctl daemon-reload\nsudo systemctl restart docker
+  120  sudo tee /etc/docker/daemon.json <<EOF\n{\n    "runtimes": {\n        "nvidia": {\n            "path": "/usr/bin/nvidia-container-runtime",\n            "runtimeArgs": []\n        }\n    }\n}\nEOF\nsudo pkill -SIGHUP dockerd
+  121  sudo groupadd docker
+  122  whoami
+  123  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache \\n  python dataset_tool.py create_from_images ./datasets/eyes /Data)"
+  124  pwd
+  125  mkdir 
+  126  mkdir Datasets
+  127  mkdir eyes
+  128  ls
+  129  cd Datasets
+  130  mkdir eyes
+  131  cd eyes
+  132  nautilus .
+  133  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache \\n  python dataset_tool.py create_from_images ./datasets/eyes /Data)"
+  134  cd ..
+  135  mkdir Faces-Resto-256
+  136  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache \\n  python dataset_tool.py create_from_images ./datasets/eyes /Data)"
+  137  cd ..
+  138  ls
+  139  cd Documents
+  140  ls
+  141  cd gitWorkspace
+  142  cd stylegan2-ada
+  143  ls
+  144  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache \\n  python dataset_tool.py create_from_images ./datasets/eyes /Data)"
+  145  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache
+  146  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash -c \\n  "(cd /scratch && DNNLIB_CACHE_DIR=/scratch/.cache"
+  147  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash 
+  148  ls
+  149  cd Documents
+  150  cd gitWorkspace
+  151  ls
+  152  sudo apt install openssh-server
+  153  sudo systemctl status ssh
+  154  sudo ufw allow ssh
+  155  whoami
+  156  ls
+  157  cd Documents
+  158  ls
+  159  sudo systemctl status ssh
+  160  ls
+  161  nvidia-s
+  162  nvidia-smi
+  163  ifconfig
+  164  history
+  165  sudo systemctl status ssh\n
+  166  cd Documents/gitWorkspace
+  167  git clone git@github.com:rosinality/stylegan2-pytorch.git
+  168  cd stylegan2-pytorch
+  169  l
+  170  code .
+  171  ls
+  172  cd Documents
+  173  cd gitWorkspace
+  174  ls
+  175  cd stylegan2-pytorch
+  176  ls
+  177  python generate.py
+  178  pip install pytorch
+  179  pip install torch
+  180  python generate.py
+  181  pip install torchvision
+  182  python generate.py
+  183  pip install stylegan2_pytorch
+  184  cd ..
+  185  ls
+  186  cd maskbackend
+  187  ls
+  188  python app.py
+  189  conda env list
+  190  ls
+  191  conda env create --name ffhq
+  192  conda create env --name ffhq
+  193  conda create --name ffhq
+  194  conda actiavte ffhq
+  195  ls
+  196  conda activate ffhq
+  197  pip install requirements.txt
+  198  conda create --name ffhq python=3.8
+  199  pip install requirements.txt
+  200  ls
+  201  pip install -r requirements.txt
+  202  conda activate tf-gpu
+  203  pip install -r requirements.txt
+  204  python app.py
+  205  l
+  206  cd Documents
+  207  l
+  208  cd gitWorkspace
+  209  l
+  210  cd stylegan2-ada
+  211  l
+  212  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch --user $(id -u):$(id -g) stylegan2ada:latest bash 
+  213  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  stylegan2ada:latest bash 
+  214  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  stylegan2ada:latest bash
+  215  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  stylegan2ada:latest zsh
+  216  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  stylegan2ada:latest bash 
+  217  docker containers
+  218  docker --help
+  219  docker build .
+  220  cd Documents/gitWorkspace/stylegan2-ada
+  221  docker build .
+  222  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  9baf5259f159 bash
+  223  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  9baf5259f159 zsh
+  224  code .
+  225  docker images
+  226  docker images rmi 00fa9bfe6d04
+  227  docker images rm 00fa9bfe6d04
+  228  docker rm 00fa9bfe6d04
+  229  docker rmi 00fa9bfe6d04
+  230  docker rmi da58f80fd417
+  231  docker rmi da58f80fd417 -f
+  232  docker rmi da58f80fd417 --force
+  233  docker --help
+  234  docker rmi da58f80fd417 --force
+  235  docker build .
+  236  touch supervisord.conf
+  237  docker build .
+  238  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  fbaafa76b034 zsh
+  239  cd ..
+  240  ls
+  241  cd maskbackend
+  242  ls
+  243  code .
+  244  pwd
+  245  docker build .
+  246  docker-compose up
+  247  sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  248  docker-compose up
+  249  ls
+  250  chmod +x /usr/local/bin/docker-compose
+  251  sudo chmod +x /usr/local/bin/docker-compose
+  252  docker-compose up
+  253  ls
+  254  docker ps
+  255  ls
+  256  cd Documents
+  257  cd gitWorkspace
+  258  git clone https://github.com/rosasalberto/StyleGAN2-TensorFlow-2.x.git
+  259  git clone https://github.com/8secz-johndpope/StyleGAN2-TensorFlow-2.x.git
+  260  rm -rf StyleGAN2-TensorFlow-2.x
+  261  git clone https://github.com/8secz-johndpope/StyleGAN2-TensorFlow-2.x.git
+  262  git clone git@github.com:8secz-johndpope/StyleGAN2-TensorFlow-2.x.git
+  263  rm -rf StyleGAN2-TensorFlow-2.x
+  264  git clone git@github.com:8secz-johndpope/StyleGAN2-TensorFlow-2.x.git
+  265  cd StyleGAN2-TensorFlow-2.x
+  266  l
+  267  sudo apt-get install jupyter
+  268  cd Documents
+  269  l
+  270  cd gitWorkspace
+  271  l
+  272  cd StyleGAN2-TensorFlow-2.x
+  273  ls
+  274  jupter .
+  275  jupyter
+  276  jupyter notebook
+  277  pwd
+  278  ls
+  279  cd Documents
+  280  l
+  281  cd gitWorkspace
+  282  l
+  283  cd StyleGAN2-TensorFlow-2.x
+  284  juypter notebook
+  285  jupyter notebook
+  286  conda env list
+  287  conda create --name tf2 python=3.8
+  288  conda activate tf2
+  289  conda install -c anaconda cudatoolkit
+  290  code .
+  291  jupyter notebook
+  292  pip install matplot
+  293  jupyter notebook
+  294  conda activate tf2
+  295  pip install matplotlib
+  296  code .
+  297  ls
+  298  conda activate tf2
+  299  python example_how_to_use.py
+  300  echo $LD_LIBRARY_PATH
+  301  conda install cudnn
+  302  export OS=ubuntu2004
+  303  wget https://developer.download.nvidia.com/compute/cuda/repos/$\{OS\}/x86_64/cuda-$\{OS\}.pin \n\nsudo mv cuda-${OS}.pin /etc/apt/preferences.d/cuda-repository-pin-600\nsudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/$\{OS\}/x86_64/7fa2af80.pub\nsudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/${OS}/x86_64/ /"\nsudo apt-get update
+  304  export {OS}=ubuntu2004
+  305  echo OS
+  306  echo $OS
+  307  cd ..
+  308  ls
+  309  cd ..
+  310  cd Downloads
+  311  l
+  312  tar -xzvf  cul
+  313  ls
+  314  tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
+  315  ls
+  316  sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+  317  l
+  318  mkdir /usr/local/cuda/include
+  319  mkdir -R /usr/local/cuda/include
+  320  mkdir -r /usr/local/cuda/include
+  321  mkdir -c /usr/local/cuda/include
+  322  mkdir --help
+  323  mkdir -p /usr/local/cuda/include
+  324  sudo mkdir -p /usr/local/cuda/include
+  325  sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+  326  sudo mkdir -p /usr/local/cuda/lib64
+  327  sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+  328  sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+  329  jupyter notebook
+  330  cd Doc
+  331  cd ..
+  332  cd Documents
+  333  ls
+  334  cd gitWorkspace
+  335  l
+  336  cd StyleGAN2-TensorFlow-2.x
+  337  l
+  338  python example_how_to_use.py
+  339  code ~/.zshrc
+  340  /usr/local/cuda-11.0
+  341  cd /usr
+  342  cd local
+  343  ls
+  344  cd cuda
+  345  ls
+  346  cd lib64
+  347  ls
+  348  cd ..
+  349  cd /
+  350  ls
+  351  cd home
+  352  ls
+  353  cd jp
+  354  ls
+  355  cd Documents
+  356  ls
+  357  cd gitWorkspace
+  358  ls
+  359  cd StyleGAN2-TensorFlow-2.x
+  360  ls
+  361  python example_how_to_use.py
+  362  conda activate tf2
+  363  python example_how_to_use.py
+  364  pip uninstall tensorflow
+  365  pip install tf-nightly-gpu\n
+  366  python example_how_to_use.py
+  367  export CUDA_VISIBLE_DEVICES=1
+  368  python example_how_to_use.py
+  369  nvidia-smi
+  370  python example_how_to_use.py
+  371  env
+  372  unset ^[[200~CUDA_VISIBLE_DEVICES~
+  373  unset CUDA_VISIBLE_DEVICES
+  374  env
+  375  python example_how_to_use.py
+  376  ls
+  377  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin \n\nsudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600\nsudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub\nsudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"\nsudo apt-get update
+  378  sudo apt-get install libcudnn8=cuda11.1-1+8.0.5.39\nsudo apt-get install libcudnn8-dev=cuda11.1-1+8.0.5.39
+  379  sudo apt-get install libcudnn8=8.0.5.39-1+cuda11.1\nsudo apt-get install libcudnn8-dev=8.0.5.39-1+cuda11.1
+  380  python example_how_to_use.py
+  381  nvcc --version
+  382  sudo find / -name nvcc
+  383  echo $LD_LIBRARY_PATH
+  384  cd ..
+  385  ls
+  386  cd cuda
+  387  ls
+  388  jupyter notebook
+  389  ls
+  390  l
+  391  cd ..
+  392  ls
+  393  git clone git@github.com:johndpope/stylegan2-pytorch.git
+  394  cd stylegan2-pytorch
+  395  l
+  396  cd ..
+  397  cd stylegan2
+  398  ls
+  399  cd ..
+  400  ls
+  401  cd stylegan2-pytorch
+  402  python convert_weight.py --repo ../stylegan2 stylegan2-ffhq-config-f.pkl
+  403  pip install torch
+  404  python convert_weight.py --repo ../stylegan2 stylegan2-ffhq-config-f.pkl
+  405  pip install torchvision
+  406  python convert_weight.py --repo ../stylegan2 stylegan2-ffhq-config-f.pkl
+  407  pip install ninja
+  408  python convert_weight.py --repo ../stylegan2 stylegan2-ffhq-config-f.pkl
+  409  pip uninstall torch
+  410  pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+  411  python convert_weight.py --repo ../stylegan2 AlfredENeuman24_ADA-VersatileFaces36_ADA_v2-blended-64.pkl
+  412  dc /usr/local
+  413  cd /usr/local
+  414  ls
+  415  cd cuda
+  416  ls
+  417  cd include
+  418  l
+  419  cd ..
+  420  ls
+  421  cd ..
+  422  cd cuda
+  423  cd lib64
+  424  l
+  425  nvidia-msi
+  426  nvidia-smi
+  427  echo $LD_LIBRARY_PATH
+  428  echo $PATH
+  429  docker
+  430  cd ..
+  431  ls
+  432  cd stylegan2
+  433  l
+  434  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  fbaafa76b034 zsh
+  435  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch  9baf5259f159 zsh
+  436  docker containers
+  437  docker
+  438  docker ls
+  439  docker lits
+  440  docker list
+  441  docker images
+  442  docker info
+  443  docker info container
+  444  docker info containers
+  445  docker info --help
+  446  docker
+  447  docker ps
+  448  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch f2f8f80d3b4b zsh
+  449  docker exec -it f2f8f80d3b4b zsh
+  450  docker ps
+  451  docker inspect f2f8f80d3b4b
+  452  docker inspect f2f8f80d3b4b | grep "IPAddress"
+  453  docker restart f2f8f80d3b4b
+  454  docker ps
+  455  docker exec -it f2f8f80d3b4b zsh
+  456  ls
+  457  code Dockerfile
+  458  docker rmi $(docker images -a -q)
+  459  code Dockerfiledocker rmi $(docker images -a -q)
+  460  docker rmi $(docker images -a -q)
+  461  docker rm $(docker ps -a -f status=exited -q)
+  462  docker build .
+  463  docker ps
+  464  docker stop f2f8f80d3b4b
+  465  docker rm f2f8f80d3b4b
+  466  docker images
+  467  docker build --tag jp:jp .
+  468  docker ps
+  469  docker images
+  470  ls
+  471  code .
+  472  docker rm jp:jp
+  473  docker rmi jp:jp
+  474  docker rmi jp
+  475  docker images
+  476  cd ..
+  477  cd stylegan2-ada
+  478  l
+  479  docker build --tag jp:jp .
+  480  docker start 63be0e53cbdd
+  481  docker start jp
+  482  docker start jp:jp
+  483  ls
+  484  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch 63be0e53cbdd  zsh
+  485  docker 
+  486  docker info
+  487  docker ps
+  488  docker info 0f2ef70285e6 | grep "IP\n"
+  489  docker info 0f2ef70285e6 | grep "IP"\n"\ndocker info 0f2ef70285e6 | grep "IP"\n"
+  490  docker info 0f2ef70285e6 \n"\ndocker info 0f2ef70285e6 | grep "IP"\n"
+  491  docker info 0f2ef70285e6 \n
+  492  docker 
+  493  docker inspect docker info 0f2ef70285e6 \n
+  494  docker inspect 0f2ef70285e6 | grep "IP\n\n"
+  495  docker inspect 0f2ef70285e6
+  496  docker inspect  0f2ef70285e6| grep "IPAddress"
+  497  code .
+  498  docker build --tag jp:jp .
+  499  docker ps
+  500  docker stop eae10ada6ce0
+  501  docke rps
+  502  docker ps
+  503  docker images
+  504  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch b74a7c247d53  zsh
+  505  docker build --tag jp:jp .
+  506  docker ps
+  507  docker images
+  508  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch 8516559c5452  zsh
+  509  docker ps
+  510  docker inspect 541e5f35ac95
+  511  docker build --tag jp:jp .
+  512  docker images
+  513  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch a335cb98d5c4  zsh
+  514  docker images
+  515  docker ps
+  516  docker inspect 8fbb885861ff
+  517  docker build --tag jp:jp .
+  518  docker images
+  519  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch 9f6972e77e19  zsh
+  520  docker build --tag jp:jp .
+  521  docker run --tag jp:jp .
+  522  docker start jp:jp
+  523  docker start jp
+  524  docker ps
+  525  docker images
+  526  docker start 717b9f790440
+  527  docker run 717b9f790440
+  528  docker build --tag jp:jp .
+  529  docker images
+  530  docker run 757aae2d0385
+  531  cd ~/.ssh
+  532  ls
+  533  pwd
+  534  docker ps
+  535  docker inspect 74d5d1f4a08a
+  536  docker stop 74d5d1f4a08a
+  537  docker build --tag jp:jp .
+  538  docker image
+  539  docker images
+  540  docker run a335cb98d5c4
+  541  docker build --tag jp:jp .
+  542  docker images
+  543  docker run e5b952efbe3b
+  544  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch e5b952efbe3b  zsh
+  545  docker build --tag jp:jp .
+  546  docker images
+  547  docker run bb8d02b4e13c
+  548  docker ps
+  549  docker inspect f87a4021f9da
+  550  docker images
+  551  cd ..
+  552  ls
+  553  cd Documents
+  554  ls
+  555  cd gitWorkspace
+  556  l
+  557  cd stylegan2-ada
+  558  l
+  559  docker build --tag jp:jp .
+  560  docker images
+  561  docker run 91171a852a21
+  562  cd Doc
+  563  cd ..
+  564  cd Documents/gitWorkspace
+  565  l
+  566  cd stylegan2-ada
+  567  l
+  568  docker build --tag jp:jp .
+  569  docker images
+  570  docker run 85203fbd794b
+  571  docker images
+  572  docker ps
+  573  docker inspect 2d02258cb005
+  574  cd ..
+  575  cd Documents/gitWorkspace/stylegan2-ada
+  576  l
+  577  ls
+  578  docker build --tag jp:jp .
+  579  docker images
+  580  docker run 2400f39244e3
+  581  docker ps
+  582  docker inspect 685b069f1916
+  583  cd ..
+  584  cd Documents
+  585  cd gitWorkspace
+  586  ls
+  587  cd stylegan2-ada
+  588  ls
+  589  docker ps
+  590  docker stop a54c94130e1f 2d02258cb005 f87a4021f9da
+  591  docker ps
+  592  docker stop 685b069f1916
+  593  docker images
+  594  docker rmi 85203fbd794b
+  595  docker rm $(docker ps -a -f status=exited -q)
+  596  docker rmi 85203fbd794b
+  597  docker images
+  598  docker rmi 91171a852a21
+  599  docker rmi bb8d02b4e13c
+  600  docker rmi 757aae2d0385
+  601  docker rmi 717b9f790440
+  602  docker images
+  603  docker rmi a335cb98d5c4
+  604  docker rmi $(docker images -a -q)
+  605  docker images
+  606  cd stylegan2-ada
+  607  docker build --tag jp:jp .
+  608  docker images
+  609  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch ac05cff1406c  zsh
+  610  docker imgages
+  611  docker images
+  612  docker ps
+  613  docker inspect 98ad20b961bc
+  614  ls
+  615  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch ac05cff1406c 
+  616  docker ps
+  617  docker inspect 432f64a975c1
+  618  docker images
+  619  docker run ac05cff1406c
+  620  docker build --tag jp:jp .
+  621  docker ps
+  622  docker stop a3773616d929
+  623  docker stop 432f64a975c1
+  624  docker images
+  625  docker run ac05cff1406c
+  626  ls
+  627  docker images
+  628  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch ac05cff1406c zsh 
+  629  docker build --tag jp:jp .
+  630  docker ps
+  631  docker stop 1ddec9b5acfd
+  632  docker rm 1ddec9b5acfd
+  633  docker images
+  634  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch 57186179b938 zsh 
+  635  docker ps
+  636  docker a2880b246b10
+  637  docker inspect a2880b246b10
+  638  cd ..
+  639  ls
+  640  docker pull nvcr.io/nvidia/tensorflow:20.10-tf1-py3
+  641  docker images
+  642  docker run da58f80fd417
+  643  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch da58f80fd417 bash 
+  644  docker images
+  645  docker ps
+  646  docker stop 7c8b765342ee
+  647  docker rmi 7c8b765342ee
+  648  docker rm 7c8b765342ee
+  649  docker build --tag jp:jp .
+  650  docker images
+  651  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n   --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n  -v `pwd`:/scratch c3e07a90aa93 bash 
+  652  ls
+  653  docker images
+  654  docker build --tag jp:jp .
+  655  docker images
+  656  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch aa4c700589ba zsh \n
+  657  docker ps
+  658  docker build --tag jp:jp .
+  659  docker images
+  660  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch 70cf749408b8 zsh 
+  661  docker build --tag jp:jp .
+  662  docker images
+  663  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch 5c357f7a625c zsh 
+  664  docker build --tag jp:jp .
+  665  docker images
+  666  docker ps
+  667  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch 3dac97c5755a zsh
+  668  docker build --tag jp:jp .
+  669  docker images
+  670  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch e76edf585833 zsh 
+  671  docker build --tag jp:jp .
+  672  docker images
+  673  docker ps
+  674  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch d82833c70feb zsh 
+  675  docker ps
+  676  docker images
+  677  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Datasets/Faces-Resto-256",target=/Data \\n -v `pwd`:/scratch d82833c70feb zsh 
+  678  docker ps –aq
+  679  docker container ls
+  680  docker ps –a
+  681  docker 
+  682  docker container --help
+  683  docker container ls
+  684  ls
+  685  cd Documents/gitWorkspace
+  686  l
+  687  git clone git@github.com:johndpope/maskbackend.git
+  688  cd maskbackend
+  689  l
+  690  code .
+  691  rm *.deb*
+  692  ls
+  693  mv ff*.pkl ..
+  694  ls
+  695  mv FF*.pkl ..
+  696  ls
+  697  source /home/jp/miniconda3/bin/activate
+  698  conda activate tf2
+  699  code .gitignore
+  700  docker images
+  701  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace/maskbackend",target=/workspace/maskbackend \\n -v `pwd`:/scratch d82833c70feb  zsh 
+  702  cd ..
+  703  cd stylegan2-ada
+  704  code .
+  705  docker images
+  706  docker ps
+  707  docker inspect 279ebd315445
+  708  cd ..
+  709  cd coop
+  710  git fetch
+  711  git pull
+  712  cd ..
+  713  git clone git@github.com:8secz-johndpope/coop.git
+  714  git clone git@github.com:8secz-johndpope/coop.git coop2
+  715  cd coop2
+  716  ls
+  717  git checkout experiment/steves_updates
+  718  nautilus .
+  719  ls
+  720  cd Documents
+  721  ls
+  722  cd gitWorkspace
+  723  ls
+  724  docker ps
+  725  docker exec -it 279ebd315445
+  726  docker exec -it 279ebd315445 zsh
+  727  docker ps
+  728  docker inspect 279ebd315445
+  729  ping pop-os.local
+  730  curl 172.17.0.2:80
+  731  curl -X POST 172.17.0.2:80/generate
+  732  docker ps
+  733  docker commit 279ebd315445 jp-avg
+  734  docker images
+  735  docker stop 279ebd315445
+  736  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace/maskbackend",target=/workspace/maskbackend \\n -v `pwd`:/scratch a3084f30ad22  zsh 
+  737  pwd
+  738  cat ~/.ssh/config
+  739  cd stylegan2-ada
+  740  docker build --tag jp:jp .
+  741  docker images
+  742  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace/maskbackend",target=/workspace/maskbackend \\n -v `pwd`:/scratch c8515d0efd50  zsh 
+  743  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace/maskbackend",target=/workspace/maskbackend \\n -v `pwd`:/scratch c8515d0efd50  bash 
+  744  docker ps
+  745  curl -X POST 172.17.0.2:80/generate
+  746  pwd
+  747  ls
+  748  cd Documents
+  749  ls
+  750  cd gitWorkspace
+  751  l
+  752  docker ps
+  753  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch b54a74e1b139 zsh 
+  754  docker images
+  755  docker commit b54a74e1b139 jp-avg
+  756  docker ps
+  757  docker stop b54a74e1b139
+  758  docker images
+  759  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ae448d408ba5 zsh 
+  760  cd ..
+  761  git clone git@github.com:johndpope/stylegan-web.git
+  762  cd stylegan-web
+  763  code .
+  764  python ./http_server.py
+  765  docker ps
+  766  docker inspect 89badd48749d
+  767  code /etc/hosts
+  768  ping example.com
+  769  ping www.8secondz.app
+  770  ping www.8secondz.app -f
+  771  ping www.8secondz.app 
+  772  ifconfig
+  773  cd stylegan
+  774  l
+  775  cd stylegan2
+  776  nvcc test_nvcc.cu -o test_nvcc -run
+  777  mkdir raw\nmkdir aligned\nmkdir generated
+  778  wget https://upload.wikimedia.org/wikipedia/commons/6/6d/Shinz%C5%8D_Abe_Official.jpg -O raw/example.jpg
+  779  cd ..
+  780  code .
+  781  sudo apt-get install xbindkeys\n
+  782  sudo apt-get install gnome-tweaks\n\n
+  783  ./gnome-tweaks
+  784  sudo apt install gnome-tweak-tool
+  785  sudo apt-get uninstall ^[[200~gnome-tweaks
+  786  ~
+  787  sudo apt-get uninstall gnome-tweaks
+  788  sudo apt-get remove gnome-tweaks
+  789  gnome-tweaks
+  790  sudo apt install gnome-tweak-tool
+  791  gnome-tweaks
+  792  cd Documents
+  793  cd gitWorkspace
+  794  l
+  795  code .
+  796  sudo apt install xfce4-screenshooter\n
+  797  pwd
+  798  ls
+  799  cd ..
+  800  cd Desktop
+  801  l
+  802  ls
+  803  pwd
+  804  docker ps
+  805  docker images
+  806  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ae448d408ba5 zsh 
+  807  cd ..
+  808  cd Documents/gitWorkspace
+  809  l
+  810  cd maskbackend
+  811  l
+  812  code .
+  813  sudo code .
+  814  cd ..
+  815  cd stylegan2-ada
+  816  code .
+  817  cd Documents
+  818  cd gitWorkspace
+  819  l
+  820  mkdir ssh
+  821  cp ~/.ssh ssh
+  822  cd ..
+  823  ls
+  824  cd ..
+  825  cd .ssh
+  826  ls
+  827  cp * /home/jp/Documents/gitWorkspace/ssh
+  828  docker images
+  829  docker ps
+  830  docker commit 44b20d8861a0 jp-avg
+  831  cd ..
+  832  l
+  833  cd Documents
+  834  l
+  835  cd gitWorkspace
+  836  git clone https://github.com/johndpope/stylegan2-faceswap
+  837  cd stylegan2-faceswap
+  838  l
+  839  gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true
+  840  docker commit 44b20d8861a0 jp-avg
+  841  docker images
+  842  ls
+  843  cd Documents
+  844  l
+  845  cd gitWorkspace
+  846  l
+  847  docker images
+  848  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch 48d188a7a692 zsh 
+  849  docker images
+  850  docker ps
+  851  docker commit 4838a6eb40f9 jp-avg
+  852  cd Documents
+  853  l
+  854  cdg install.sh
+  855  cd gitWorkspace
+  856  l
+  857  cd GAN_explorer
+  858  wget https://s3.amazonaws.com/devopstar/resources/aws-catgen/models/karras2019stylegan-cats-256x256.pkl
+  859  l
+  860  cd ..
+  861  wget https://s3.amazonaws.com/devopstar/resources/aws-catgen/models/karras2019stylegan-cats-256x256.pkl
+  862  cp karras2019stylegan-cats-256x256.pkl GAN_explorer
+  863  sudo cp karras2019stylegan-cats-256x256.pkl GAN_explorer
+  864  ls
+  865  dc GAN_explorer
+  866  cd GAN_explorer
+  867  l
+  868  python demo.py
+  869  docker images
+  870  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh 
+  871  git clone https://github.com/ual-cci/GAN_explorer.git
+  872  cd GAN_explorer
+  873  code .
+  874  docker ps
+  875  docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh 
+  876  docker images
+  877  ^[[200~docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --rm \\n--env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --env="QT_X11_NO_MITSHM=1" \\n  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh
+  878  \nsudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh
+  879  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh\n
+  880  ^[[200~sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac zsh
+  881  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  882  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  883  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  884  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id  --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  885  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm   --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  886  apt-get install xhost
+  887  sudo apt-get install xhost
+  888  sudo apt-get install xorg openbox
+  889  IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+  890  ifconfig
+  891  xhost + 172.18.0.1 
+  892  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm   -e DISPLAY=172.18.0.1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+  893  ^[[200~conda create --name tf1-nv  python=3.6~
+  894  conda create --name tf1-nv  python=3.6
+  895  conda activate tf1-nv
+  896  pip install --user nvidia-pyindex
+  897  export PATH=$PATH:$HOME/.local/bin
+  898  conda install -c conda-forge openmpi
+  899  echo $LD_LIBRARY_PATH
+  900  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/miniconda3/envs/tf1-nv/lib/
+  901  pip install --user nvidia-tensorflow[horovod]
+  902  code ~/.zshrc
+  903  echo $LD_LIBRARY_PATH
+  904  pip install --user nvidia-tensorflow[horovod]\n
+  905  conda activate tf1-nv
+  906  pip install --user nvidia-tensorflow[horovod]\n
+  907  export PATH=$PATH:$HOME/.local/bin
+  908  pip install --user nvidia-pyindex
+  909  conda install -c conda-forge openmpi
+  910  pip install --user nvidia-tensorflow[horovod]
+  911  ls
+  912  cd Documents
+  913  l
+  914  cd gitWorkspace
+  915  l
+  916  cd GAN_explorer
+  917  l
+  918  python demo_stylegan2.py
+  919  conda env list
+  920  conda activate tf1-nv
+  921  ls
+  922  conda install pip
+  923  pip install --user nvidia-pyindex
+  924  conda install -c conda-forge openmpi
+  925  pip install --user nvidia-tensorflow[horovod]
+  926  pip install nvidia-pyindex
+  927  pip install nvidia-tensorflow[horovod]
+  928  pip3 install nvidia-tensorflow[horovod]
+  929  pip install nvidia-pyindex==1.0.5
+  930  which python
+  931  bash
+  932  cd Documents
+  933  cd gitWorkspace
+  934  cd GAN_explorer
+  935  conda activate tf1-nv
+  936  python demo.py
+  937  code .
+  938  python demo_stylegan2.py
+  939  history
+  940  echo $LD_LIBRARY_PATH
+  941  python demo_stylegan2.py
+  942  nvcc --help
+  943  nvcc 
+  944  nvcc test_nvcc.cu -o test_nvcc -run
+  945  nvidia-smi
+  946  cd Documents/gitWorkspace
+  947  l
+  948  git clone https://github.com/a312863063/generators-with-stylegan2.git
+  949  cd generators-with-stylegan2
+  950  l
+  951  python main.py
+  952  conda env list
+  953  conda activate tf1-nv
+  954  python main.py
+  955  cd ..
+  956  cd GAN_explorer
+  957  l
+  958  python server.py
+  959  cd ..
+  960  git clone https://github.com/GreenLimeSia/Real-Image-Manipulation-under-Domain-Guided-Noise-Optimization-Mechanism.git
+  961  git clone https://github.com/GreenLimeSia/GenEdi.git
+  962  rm -rf GenEdi
+  963  git clone ^[[200~git@github.com:johndpope/GenEdi.git~
+  964  git clone git@github.com:johndpope/GenEdi.git
+  965  cd GenEdi
+  966  l
+  967  \npython https://askubuntu.com/questions/961175/copy-and-paste-doesnt-work-in-the-termin
+  968  ls
+  969  conda env list
+  970  conda activate tf2
+  971  python ls
+  972  la
+  973  ls
+  974  python test.py
+  975  pip install torchsummaryX
+  976  python test.py
+  977  conda activate tf1-nv
+  978  python test.py
+  979  pip install torchsummaryX
+  980  python test.py
+  981  pip install torchvision
+  982  python test.py
+  983  conda create --name torch  python=3.8
+  984  conda activate torch
+  985  conda install pytorch torchvision cudatoolkit=11 -c **pytorch-nightly**
+  986  conda install -c pytorch pytorch\n
+  987  conda activate tf1-nv
+  988  ls
+  989  cd ..
+  990  ls
+  991  cd GAN_explorer
+  992  l
+  993  python demo.py
+  994  python demo_stylegan2.py
+  995  bash
+  996  python test.py
+  997  pip install matplotlib
+  998  ls
+  999  python test.py
+ 1000  pip torchsummaryX
+ 1001  pip torchsummary
+ 1002  pip install torchsummaryX
+ 1003  python test.py
+ 1004  pip install torchvision
+ 1005  python test.py
+ 1006  pip inSTALL scikit-image
+ 1007  pip install scikit-image
+ 1008  python test.py
+ 1009  pip install yaml
+ 1010  pip install pyyaml
+ 1011  python test.py
+ 1012  pip install torchsummary
+ 1013  python test.py
+ 1014  ls
+ 1015  code .
+ 1016  python run_convert_from_tf.py ffhq-config-e
+ 1017  python run_convert_from_tf.py -i ffhq-config-e
+ 1018  python run_convert_from_tf.py -d ffhq-config-e
+ 1019  python test.py
+ 1020  l
+ 1021  python run_gui_interactive_local.py
+ 1022  pip install sci-kit-learn
+ 1023  pip install scikit-learn
+ 1024  python run_gui_interactive_local.py
+ 1025  python run_generator.py generate_images --network=Gs.pth --seeds=6600-6625 --truncation_psi=0.5\n
+ 1026  nvidia-smi --loop-ms=1000
+ 1027  conda activate torch
+ 1028  pip install gpustat
+ 1029  gpustat
+ 1030  watch nvidia-smi
+ 1031  python run_generator.py generate_images --network=Gs.pth --seeds=8600-8625 --truncation_psi=0.5\n
+ 1032  python run_generator.py generate_images --network=Gs.pth --seeds=66,230,389,1518 --truncation_psi=1.0
+ 1033  python run_convert_from_tf.py --download ffhq-config-f --output G.pth D.pth Gs.pth
+ 1034  l
+ 1035  cd J:\\Python_Projects\\stylegan2\\stylegan2_pytorch-master\\interactive
+ 1036  l
+ 1037  cd ..
+ 1038  rm -rf J:\\Python_Projects\\stylegan2\\stylegan2_pytorch-master\\interactive
+ 1039  l
+ 1040  mkdir interactive
+ 1041  python run_gui_interactive_local.py
+ 1042  git add -A
+ 1043  cd interactive
+ 1044  l
+ 1045  rm *.*
+ 1046  cd..
+ 1047  cd ,,
+ 1048  cd ..
+ 1049  cd .git
+ 1050  ls
+ 1051  rm index.lock
+ 1052  cd ..
+ 1053  cd..
+ 1054  cd ..
+ 1055  git clone https://github.com/johndpope/Real-Image-Manipulation-under-Domain-Guided-Noise-Optimization-Mechanism
+ 1056  ls
+ 1057  cd Real-Image-Manipulation-under-Domain-Guided-Noise-Optimization-Mechanism
+ 1058  l
+ 1059  cd DNI-Code
+ 1060  l
+ 1061  nautilus .
+ 1062  cd ..
+ 1063  cd..
+ 1064  cd ..
+ 1065  l
+ 1066  cd GAN_explorer
+ 1067  l
+ 1068  python demo_stylegan2.py
+ 1069  code .
+ 1070  l
+ 1071  code .
+ 1072  cd ..
+ 1073  tf_upgrade_v2  --intree GAN_explorer  --outtree GAN_explorer2
+ 1074  ls
+ 1075  cd GAN_explorer
+ 1076  l
+ 1077  code .
+ 1078  cd ..
+ 1079  cd GAN_explorer
+ 1080  git reset --hard
+ 1081  ls
+ 1082  cdcore
+ 1083  cd core
+ 1084  l
+ 1085  cd core
+ 1086  ls
+ 1087  cd ..
+ 1088  tf_upgrade_v2 --intree GAN_explorer   --outtree GAN_explorer2
+ 1089  rm -rf GAN_explorer2
+ 1090  tf_upgrade_v2 --intree GAN_explorer   --outtree GAN_explorer2
+ 1091  conda env list
+ 1092  conda activate tf2
+ 1093  ls
+ 1094  cd GAN_explorer2
+ 1095  l
+ 1096  python demo_stylegan2.py
+ 1097  pip install scipy
+ 1098  python demo_stylegan2.py
+ 1099  pip install opencv-python
+ 1100  python demo_stylegan2.py
+ 1101  pip install sckit-image
+ 1102  pip install scikit-image
+ 1103  python demo_stylegan2.py
+ 1104  pip install mock
+ 1105  python demo_stylegan2.py
+ 1106  code .
+ 1107  cd ..
+ 1108  cd GAN_explorer
+ 1109  cp models/AlfredENeuman24_ADA-VersatileFaces36_ADA_v2-blended-64.pkl  ../GAN_explorer2/models
+ 1110  python demo_stylegan2.py
+ 1111  cd ..
+ 1112  cd GAN_explorer2
+ 1113  l
+ 1114  python demo_stylegan2.py
+ 1115  ls
+ 1116  rm cuda-repo-ubuntu2004-11-1-local_11.1.1-455.32.00-1_amd64.deb
+ 1117  ls
+ 1118  cd Documents
+ 1119  l
+ 1120  cd gitWorkspace
+ 1121  l
+ 1122  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch ddaaa042cbac
+ 1123  l
+ 1124  cd GAN_explorer2
+ 1125  l
+ 1126  python demo.py
+ 1127  conda env list
+ 1128  conda activate tf2
+ 1129  ls
+ 1130  python demo.py
+ 1131  ls
+ 1132  python server.py
+ 1133  pip install flask
+ 1134  python server.py
+ 1135  code .
+ 1136  python server.py
+ 1137  l
+ 1138  cd models/
+ 1139  l
+ 1140  python AlfredENeuman24_ADA-VersatileFaces36_ADA_v2-blended-64.pkl
+ 1141  python server.py
+ 1142  l
+ 1143  ls
+ 1144  cd ..
+ 1145  python server.py
+ 1146  cd dnnlib
+ 1147  l
+ 1148  cd tflib
+ 1149  l
+ 1150  tf_upgrade_v2  network.py
+ 1151  tf_upgrade_v2 --infile  network.py--outfile network2.py
+ 1152  tf_upgrade_v2 --infile  network.py --outfile network2.py
+ 1153  cd ..
+ 1154  l
+ 1155  cd ..
+ 1156  python server.py
+ 1157  ls
+ 1158  cd Documents
+ 1159  l
+ 1160  cd gi
+ 1161  cd gitWorkspace
+ 1162  l
+ 1163  cd GAN-1
+ 1164  l
+ 1165  cd FaceAging
+ 1166  l
+ 1167  python main.py
+ 1168  cd ..
+ 1169  cd GenEdi
+ 1170  l
+ 1171  cd stylegan2
+ 1172  cd ..
+ 1173  code .
+ 1174  ls*.py
+ 1175  ls *.py
+ 1176  ls -R *.py  > dir.txt
+ 1177  cd stylegan2
+ 1178  ls *.py dir.txt
+ 1179  ls *.py > dir.txt
+ 1180  cd ..
+ 1181  l
+ 1182  cd stylegan-web
+ 1183  conda activate tf2
+ 1184  python http_server.py 
+ 1185  pip install dotenv
+ 1186  ls
+ 1187  cat requirements.txt
+ 1188  pip install -r requirements.txt
+ 1189  python http_server.py 
+ 1190  cd ..
+ 1191  git clone git@github.com:johndpope/stylegan-web.git
+ 1192  git clone git@github.com:johndpope/stylegan-web.git stylegan2-web
+ 1193  cd stylegan2-web
+ 1194  code .
+ 1195  git init submodules
+ 1196  rm -rf submodules
+ 1197  git submodule update --init --recursive
+ 1198  l
+ 1199  cd ..
+ 1200  cp -R stylegan-web/dnnlib stylegan2-web
+ 1201  cd stylegan2-web
+ 1202  l
+ 1203  python http_server.py
+ 1204  chmod +x generate-cert.sh
+ 1205  ./generate-cert.sh
+ 1206  python http_server.py
+ 1207  code /etc/hosts
+ 1208  ping www.example.com
+ 1209  code /etc/hosts
+ 1210  ping example.com
+ 1211  code .
+ 1212  top
+ 1213  htop
+ 1214  sudo apt-get install htop
+ 1215  htop
+ 1216  python http_server.py
+ 1217  cat .gitignore
+ 1218  code .
+ 1219  ls
+ 1220  cd stylegan2-ada
+ 1221  git remote 
+ 1222  git remote add jp https://github.com/johndpope/stylegan2-ada
+ 1223  cd ..
+ 1224  ls
+ 1225  cd stylegan2-ada
+ 1226  l
+ 1227  rm -rf Linux-Magic-Trackpad-2-Driver
+ 1228  ls
+ 1229  code .
+ 1230  cd ..
+ 1231  git clone git@github.com:johndpope/stylegan2-ada.git
+ 1232  cd stylegan2-ada
+ 1233  code .
+ 1234  code .cd ..
+ 1235  cd ..
+ 1236  cd gitWorkspace
+ 1237  ls
+ 1238  mv stylegan2-ada DEL-stylegan2-data
+ 1239  ls
+ 1240  cd stylegan2-web
+ 1241  l
+ 1242  code .
+ 1243  cd ..
+ 1244  ls
+ 1245  git clone git@github.com:johndpope/stylegan-web.git
+ 1246  cd stylegan-web
+ 1247  git submodule update --init --recursive
+ 1248  ls
+ 1249  ./generate-cert.sh
+ 1250  python http_server.py
+ 1251  cd ..
+ 1252  l
+ 1253  cd stylegan2-ada
+ 1254  code .
+ 1255  ls
+ 1256  cd ..
+ 1257  cd stylegan-web
+ 1258  l
+ 1259  code .
+ 1260  cd stylegan2-ada
+ 1261  git fetch
+ 1262  pwd
+ 1263  git checkout master
+ 1264  git fetch
+ 1265  git checkout master
+ 1266  git pull
+ 1267  cd ..
+ 1268  l
+ 1269  rm -rf stylegan2-ada
+ 1270  ls
+ 1271  git submodule update --init --recursive
+ 1272  l
+ 1273  rm -rf stylegan2-ada
+ 1274  git clone https://github.com/johndpope/stylegan2-ada
+ 1275  python http_server.py
+ 1276  htop
+ 1277  python http_server.py
+ 1278  htop
+ 1279  python http_server.py
+ 1280  htop
+ 1281  python http_server.py
+ 1282  htop 
+ 1283  python http_server.py
+ 1284  pip freeze > test.txt
+ 1285  code test.txt
+ 1286  pip show tensorflow
+ 1287  python3 -c 'import tensorflow as tf; print(tf.__version__)' 
+ 1288  git status
+ 1289  l
+ 1290  git submodule update
+ 1291  cd .git
+ 1292  l
+ 1293  cd modules
+ 1294  l
+ 1295  code .
+ 1296  cd ..
+ 1297  git submodule update
+ 1298  code .
+ 1299  ls
+ 1300  cd stylegan2-ada
+ 1301  git checkout master
+ 1302  git checkout main
+ 1303  git pull
+ 1304  cd ..
+ 1305  python http_server.py
+ 1306  code .
+ 1307  python http_server.py
+ 1308  htop python
+ 1309  python http_server.py
+ 1310  nvcc --help
+ 1311  version
+ 1312  nvcc --version
+ 1313  which nvcc
+ 1314  cd ..
+ 1315  cd Downloads
+ 1316  wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
+ 1317  nvidia-smi
+ 1318  uname -r
+ 1319  sudo apt-get install linux-headers-$(uname -r)
+ 1320  cd /usr/local
+ 1321  l
+ 1322  cd cuda
+ 1323  l
+ 1324  cd lib64
+ 1325  l
+ 1326  history
+ 1327  cd /home
+ 1328  l
+ 1329  cd jp
+ 1330  conda remove cudatoolkit\n
+ 1331  conda activate tf2
+ 1332  ls
+ 1333  conda 
+ 1334  conda activate tf2
+ 1335  conda remove cudatoolkit
+ 1336  cd /usr/
+ 1337  l
+ 1338  ls
+ 1339  sudo /usr/bin/nvidia-uninstall
+ 1340  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 1341  cd /usr/
+ 1342  ls
+ 1343  nvcc --version
+ 1344  cat /var/log/cuda-installer.log
+ 1345  nvidia-smi
+ 1346  pwd
+ 1347  cd /home/jp/Downloads
+ 1348  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 1349  cd /var/log
+ 1350  ls
+ 1351  code cuda-installer.log
+ 1352  sudo dpkg -P $(dpkg -l | grep nvidia-driver | awk '{print $2}')
+ 1353  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 1354  sudo apt install xserver-xorg-video-nouveau
+ 1355  kill -9 37803
+ 1356  sudo kill -9 37803
+ 1357  sudo apt install xserver-xorg-video-nouveau
+ 1358  sudo apt autoremove
+ 1359  ls
+ 1360  cd Downloads
+ 1361  l
+ 1362  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 1363  ls
+ 1364  cd Downloads
+ 1365  l
+ 1366  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 1367  nvidia-smi
+ 1368  nvcc --version
+ 1369  which nvcc
+ 1370  code ~/.zshrc
+ 1371  cd /usr/local/cuda-11.2/bin
+ 1372  l
+ 1373  nvcc
+ 1374  nvcc --version
+ 1375  code /etc/ld.so.conf
+ 1376  cd /usr/local
+ 1377  l
+ 1378  cd cuda
+ 1379  ls
+ 1380  cd lib64
+ 1381  l
+ 1382  cd ..
+ 1383  l
+ 1384  cd include
+ 1385  ls
+ 1386  cd ..
+ 1387  ls
+ 1388  cd ..
+ 1389  l
+ 1390  cd cuda-11.2
+ 1391  l
+ 1392  cd lib64
+ 1393  l
+ 1394  nvidia-smi
+ 1395  which nvcc
+ 1396  cd /
+ 1397  ls
+ 1398  which nvcc
+ 1399  cd /home
+ 1400  l
+ 1401  cd jp
+ 1402  l
+ 1403  cd Documents
+ 1404  cd gitWorkspace
+ 1405  l
+ 1406  cd ..
+ 1407  l
+ 1408  cd stylegan-web
+ 1409  conda activate tf2
+ 1410  python http_server.py
+ 1411  htop
+ 1412  docker ps
+ 1413  which nvcc
+ 1414  nvcc --version
+ 1415  cd Documents
+ 1416  l
+ 1417  cd stylegan-web
+ 1418  python http_server.py
+ 1419  conda activate tf2
+ 1420  python http_server.py
+ 1421  code ~/.zshrc
+ 1422  code ~/.zprofile
+ 1423  cd Documents
+ 1424  cd gitWorkspace
+ 1425  l
+ 1426  cd stylegan2-web
+ 1427  l
+ 1428  conda activate tf2
+ 1429  python http_server.py
+ 1430  cd ..
+ 1431  l
+ 1432  cd stylegan-web
+ 1433  htop
+ 1434  l
+ 1435  python http_server.py
+ 1436  code /etc/hosts
+ 1437  cd ..
+ 1438  l
+ 1439  cd gitWorkspace
+ 1440  l
+ 1441  cd stylegan2
+ 1442  l
+ 1443  code .
+ 1444  cd Documents
+ 1445  l
+ 1446  cd gitWorkspace
+ 1447  l
+ 1448  code .
+ 1449  cd stylegan2-2
+ 1450  code .
+ 1451  cd ..
+ 1452  cd stylegan2
+ 1453  code .
+ 1454  cd ..
+ 1455  l
+ 1456  cd ..
+ 1457  l
+ 1458  cd stylegan2-ada
+ 1459  l
+ 1460  git checkout digressions
+ 1461  git fetch
+ 1462  git checkout digressions
+ 1463  code .
+ 1464  conda activate tf2
+ 1465  l
+ 1466  python projector.py --outdir=out --target=targetimg.png \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 1467  python projector.py --outdir=out --target=targetimg.jpg \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 1468  pip install imageio-ffmpeg
+ 1469  python projector.py --outdir=out --target=targetimg.jpg \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 1470  python projector.py --outdir=out --target=andrew.png \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 1471  ls
+ 1472  l
+ 1473  nvidia-smi
+ 1474  l
+ 1475  cd Documents
+ 1476  l
+ 1477  cd stylegan-web
+ 1478  l
+ 1479  python http_server.py
+ 1480  conda activate tf2
+ 1481  python http_server.py
+ 1482  cd Documents
+ 1483  cd gitWorkspace
+ 1484  l
+ 1485  git clone git@github.com:johndpope/DALLE-pytorch.git
+ 1486  cd DALLE-pytorch
+ 1487  l
+ 1488  python setup.py
+ 1489  l
+ 1490  cd Documents
+ 1491  cd gitWorkspace
+ 1492  git clone https://github.com/johndpope/faceswap_api.git
+ 1493  cd faceswap_api
+ 1494  l
+ 1495  cd Docker
+ 1496  l
+ 1497  cd dev
+ 1498  docker-compose up
+ 1499  cp .env .env.secret
+ 1500  docker-compose up
+ 1501  giflib-dbg\n
+ 1502  code .
+ 1503  cd..
+ 1504  cd ..
+ 1505  l
+ 1506  cd ..
+ 1507  code .
+ 1508  docker-compose up
+ 1509  cd  Docker
+ 1510  cd dev
+ 1511  l
+ 1512  docker-compose up
+ 1513  cd Documents/gitWorkspace
+ 1514  di
+ 1515  ls
+ 1516  cd faceswap_api
+ 1517  cd Docker
+ 1518  docker-compose up
+ 1519  l
+ 1520  cd dev
+ 1521  docker-compose up
+ 1522  ls
+ 1523  docker-compose up
+ 1524  cd Documents/gitWorkspace
+ 1525  git clone https://github.com/johndpope/dnn-model-services.git
+ 1526  cd dnn-model-services/services/deepfakes-faceswap
+ 1527  l
+ 1528  docker build . -t DEEPFAKE
+ 1529  docker build . --tag DEEPFAKE
+ 1530  docker build . --tag DEEPFAKE:latest
+ 1531  docker build . --tag deepfake:latest
+ 1532  code .
+ 1533  docker build . --tag deepfake:latest
+ 1534  cd Documents/gitWorkspace
+ 1535  l
+ 1536  cd dnn-model-services
+ 1537  l
+ 1538  cd services
+ 1539  ls
+ 1540  cd deepfakes-faceswap
+ 1541  ls
+ 1542  conda env list
+ 1543  conda activate tf1-nv
+ 1544  ls
+ 1545  python run_service.py
+ 1546  ls
+ 1547  python test_service.py
+ 1548  ./buildproto.sh
+ 1549  chmod +x buildproto.sh
+ 1550  ./buildproto.sh
+ 1551  pip install grpc_tools
+ 1552  ./buildproto.sh
+ 1553  python3 -m pip install --user grpcio-tools
+ 1554  ./buildproto.sh
+ 1555  python test_service.py
+ 1556  ./run_service.py
+ 1557  python ./run_service.py
+ 1558  apt-get install snetd
+ 1559  sudo apt-get install snetd
+ 1560  cd ..
+ 1561  git clone https://github.com/deepfakes/faceswap.git
+ 1562  cd ~/Downloads
+ 1563  l
+ 1564  ./faceswap_setup_x64.sh
+ 1565  chmod +x faceswap_setup_x64.sh
+ 1566  ./faceswap_setup_x64.sh
+ 1567  python faceswap.py gui
+ 1568  ls
+ 1569  cd ~/faceswap
+ 1570  python faceswap.py gui
+ 1571  conda activate faceswap
+ 1572  python faceswap.py gui
+ 1573  cd ..
+ 1574  l
+ 1575  cd jp
+ 1576  l
+ 1577  cd Documents/gitWorkspace
+ 1578  ls
+ 1579  cd stylegan-web
+ 1580  code .
+ 1581  ls
+ 1582  python http_server.py
+ 1583  conda env ls
+ 1584  conda env list
+ 1585  conda activate tf-gpu
+ 1586  python http_server.py
+ 1587  conda activate tf1-nv
+ 1588  python http_server.py
+ 1589  conda activate ffhq
+ 1590  python http_server.py
+ 1591  conda activate tf2
+ 1592  python http_server.py
+ 1593  sudo python http_server.py
+ 1594  ls
+ 1595  code .
+ 1596  ls
+ 1597  cd ..
+ 1598  ls
+ 1599  cd ..
+ 1600  ls
+ 1601  cd gitWorkspace
+ 1602  l
+ 1603  mv stylegan-web DELETE-stylegan-web
+ 1604  cd ..
+ 1605  ls
+ 1606  cd stylegan-web
+ 1607  ls
+ 1608  python http_server.py
+ 1609  cd ..
+ 1610  cd gitWorkspace
+ 1611  git clone https://github.com/johndpope/DeepCV.git
+ 1612  cd DeepCV
+ 1613  l
+ 1614  conda activate faceswap
+ 1615  python app.py
+ 1616  pip install flask_restful
+ 1617  l
+ 1618  python app.py
+ 1619  pip install torch
+ 1620  cd ..
+ 1621  git clong https://github.com/johndpope/faceswap.git
+ 1622  git clonE https://github.com/johndpope/faceswap.giq
+ 1623  git clone https://github.com/johndpope/faceswap.git
+ 1624  git clone https://github.com/johndpope/faceswap.git faceswap_api
+ 1625  git clone https://github.com/johndpope/faceswap.git faceswap-api
+ 1626  cd faceswap-api
+ 1627  ls
+ 1628  python faceswap.py
+ 1629  pip install -r requirements-gpu-python36-cuda9.txt
+ 1630  code .
+ 1631  pip install -r requirements-gpu-python36-cuda9.txt
+ 1632  pip install h5py
+ 1633  pip install -r requirements-gpu-python36-cuda9.txt
+ 1634  sudo apt-get install build-essential cmake pkg-config\n2\nsudo apt-get install libx11-dev libatlas-base-dev\n3\nsudo apt-get install libgtk-3-dev libboost-python-dev\n
+ 1635  1\nsudo apt-get install python-dev python-pip python3-dev python3-pip\n2\nsudo -H pip2 install -U pip numpy\n3\nsudo -H pip3 install -U pip numpy\n
+ 1636  sudo apt-get install python-dev python-pip python3-dev python3-pip\n
+ 1637  l
+ 1638  cd faceswap-api
+ 1639  l
+ 1640  python faceswap.py
+ 1641  sudo apt install cmake
+ 1642  history
+ 1643  python faceswap.py
+ 1644  pip3 install face_recognition
+ 1645  python faceswap.py
+ 1646  pip install keras
+ 1647  l
+ 1648  python faceswap.py
+ 1649  pip install Keras==2.1.2
+ 1650  python faceswap.py
+ 1651  pip install scandir
+ 1652  python faceswap.py
+ 1653  ls
+ 1654  ffmpeg -i video/wyz/yanzu.mp4 photo/wyz/video-frame-%d.png\nffmpeg -i video/wbq/wbq.mp4 photo/wbq/video-frame-%d.png
+ 1655  l
+ 1656  cd video
+ 1657  ls
+ 1658  cd wbq
+ 1659  ls
+ 1660  cd ..
+ 1661  git clone https://github.com/johndpope/AiLab-Faceswap.git
+ 1662  cd  AiLab-Faceswap
+ 1663  l
+ 1664  code .
+ 1665  python run.py
+ 1666  pip install suanpan
+ 1667  apt-get install -y libsasl2-dev gcc python-dev
+ 1668  sudo apt-get install -y libsasl2-dev gcc python-dev
+ 1669  pip install suanpan
+ 1670  python run.py
+ 1671  python run.py -h
+ 1672  python run.py gui
+ 1673  python run.py component gui
+ 1674  cd ..
+ 1675  history
+ 1676  cd faceswap-api
+ 1677  ls
+ 1678  python faceswap.py
+ 1679  cd ..
+ 1680  git clone https://github.com/johndpope/deeplabs.git content
+ 1681  mv content /
+ 1682  sudo mv content /
+ 1683  cd /content
+ 1684  ls
+ 1685  python install_.py
+ 1686  code .
+ 1687  ls
+ 1688  python app.py
+ 1689  python install_.py
+ 1690  ls
+ 1691  python face_seg.py
+ 1692  pip install scikit-image
+ 1693  cd ~/
+ 1694  ls
+ 1695  cd Documents/gitWorkspace
+ 1696  git clone https://github.com/stanleykao72/DeepFaceLab_Linux.git
+ 1697  cd DeepFaceLab_Linux
+ 1698  l
+ 1699  cd DeepFaceLab
+ 1700  ls
+ 1701  cd ..
+ 1702  ls
+ 1703  cd scripts
+ 1704  ls
+ 1705  ./1_clear_workspace.sh
+ 1706  ls
+ 1707  cat 1_clear_workspace.sh
+ 1708  cd ..
+ 1709  ls
+ 1710  cd ..
+ 1711  git clone https://github.com/johndpope/deepfacelab-docker.git
+ 1712  cd deepfacelab-docker
+ 1713  l
+ 1714  docker build Dockerfile.nvidia --tag deepface2:latest
+ 1715  code .
+ 1716  cd ..
+ 1717  ls
+ 1718  cd stylegan2-ada
+ 1719  code .
+ 1720  cd ..
+ 1721  ls
+ 1722  cd gitWorkspace
+ 1723  l
+ 1724  cd deepfacelab-docker
+ 1725  l
+ 1726  docker build . --tag deepface2:latest
+ 1727  nautilus .
+ 1728  docker build . --tag deepface2:latest
+ 1729  cd ..
+ 1730  git clone https://github.com/johndpope/dockerfiles.git
+ 1731  cd dockerfiles
+ 1732  l
+ 1733  cd deepfacelab
+ 1734  l
+ 1735  docker build . --tag deepface2:latest
+ 1736  code .
+ 1737  cd ..
+ 1738  l
+ 1739  cd stylegan2-ada
+ 1740  code.
+ 1741  code .
+ 1742  docker build . --tag deepface2:latest
+ 1743  code .
+ 1744  sudo docker run -gpus all -ti -d -p 23:22 -v /home/dfl-workspace:/home/workspace deepface2:latest\n
+ 1745  sudo docker run -g all -ti -d -p 23:22 -v /home/dfl-workspace:/home/workspace deepface2:latest\n
+ 1746  sudo docker run -g all -ti -d -p 23:22 -v /home/dfl-workspace:/home/workspace deepface2:latestO\n
+ 1747  q
+ 1748  docker images
+ 1749  sudo docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm   -e DISPLAY=172.18.0.1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch 73a06bf63722
+ 1750  cd ..
+ 1751  ls
+ 1752  cd gitWorkspace
+ 1753  git clone https://github.com/nagadit/DeepFaceLab_Linux.git
+ 1754  cd DeepFaceLab_Linux
+ 1755  ls
+ 1756  cd DeepFaceLab
+ 1757  ls
+ 1758  cd models
+ 1759  ls
+ 1760  cd ..
+ 1761  ls
+ 1762  cd ..
+ 1763  ls
+ 1764  cd scripts
+ 1765  ls
+ 1766  cd ..
+ 1767  ls
+ 1768  cd workspace
+ 1769  ls
+ 1770  cd model
+ 1771  ls
+ 1772  cd ..
+ 1773  ls
+ 1774  cd ..
+ 1775  ls
+ 1776  cd DeepFaceLab
+ 1777  l
+ 1778  cd ..
+ 1779  ls
+ 1780  cd scripts
+ 1781  ls
+ 1782  cd ..
+ 1783  ls
+ 1784  cd faceswap-api
+ 1785  conda activate faceswap
+ 1786  l
+ 1787  python faceswap.py train
+ 1788  ls
+ 1789  cat faceswap.py
+ 1790  l
+ 1791  nautilus .
+ 1792  ls
+ 1793  ffmpeg -i video/wyz/1.mp4 photo/wyz/video-frame-%d.png 
+ 1794  ffmpeg -i video/wbq/1.mp4 photo/wyz/video-frame-%d.png 
+ 1795  ffmpeg -i video/wbq/1.mp4 photo/wbq/video-frame-%d.png 
+ 1796  python faceswap.py extract -i photo/wbq -o photo/faces/wbq
+ 1797  code .
+ 1798  python3 -c 'import tensorflow as tf; print(tf.__version__)'
+ 1799  conda env ls
+ 1800  conda env list
+ 1801  conda activate tf1-nv
+ 1802  ls
+ 1803  pip install -r requirements-gpu-python36-cuda9.txt
+ 1804  ls
+ 1805  python faceswap.py extract -i photo/wbq -o photo/faces/wbq
+ 1806  cd ..
+ 1807  ls
+ 1808  cd faceswap-api
+ 1809  ls
+ 1810  cd ..
+ 1811  git clone https://github.com/johndpope/realvtuber.git
+ 1812  cd realvtuber
+ 1813  l
+ 1814  bundle install
+ 1815  gem 
+ 1816  sudo apt-get install software-properties-common
+ 1817  sudo apt-add-repository -y ppa:rael-gc/rvm\nsudo apt-get update\nsudo apt-get install rvm
+ 1818  sudo usermod -a -G rvm jp
+ 1819  gem
+ 1820  rvm
+ 1821  code ~/.bash
+ 1822  code ~/.bashrc
+ 1823  source /etc/profile.d/rvm.sh
+ 1824  rvm install "ruby-2.6.5"
+ 1825  sudo rvm install "ruby-2.6.5"
+ 1826  sudo source /etc/profile.d/rvm.sh
+ 1827  rvm install "ruby-2.6.5"
+ 1828  source /etc/profile.d/rvm.sh
+ 1829  rvm install "ruby-2.6.5"
+ 1830  rvm group add rvm $USER
+ 1831  rvmsudo rvm get stable --auto-dotfiles\nrvm fix-permissions system
+ 1832  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB\n
+ 1833  \curl -sSL https://get.rvm.io | bash -s stable
+ 1834  sudo apt-get install gpg2
+ 1835  sudo apt-get install gnupg2 -y
+ 1836  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB\n
+ 1837  rvmsudo rvm get stable --auto-dotfiles\nrvm fix-permissions system
+ 1838  rvm install "ruby-2.6.5"
+ 1839  source /etc/profile.d/rvm.sh
+ 1840  rvm install "ruby-2.6.5"
+ 1841  curl -sSL https://get.rvm.io | bash -s stable
+ 1842  sudo curl -sSL https://get.rvm.io | bash -s stable
+ 1843  sudo su
+ 1844  rvm install "ruby-2.6.5"
+ 1845  rmv use "ruby-2.6.5" 
+ 1846  rvm use "ruby-2.6.5" 
+ 1847  gem
+ 1848  gem install bundler
+ 1849  sudo gem install bundler
+ 1850  sudo su
+ 1851  gem install bundler
+ 1852  bundle install --path=vendor
+ 1853  bundle update --bundler
+ 1854  bundle update --bundler --path=vendor
+ 1855  gem install bundler:2.0.2
+ 1856  sudo gem install bundler:2.0.2
+ 1857  \curl -sSL https://get.rvm.io | bash
+ 1858  curl -sSL https://get.rvm.io | sudo bash -s stable
+ 1859  sudo gem install bundler:2.0.2
+ 1860  gem install bundler:2.0.2
+ 1861  rvmsudo rvm get stable --auto-dotfiles\nrvm fix-permissions system
+ 1862  gem install bundler:2.0.2
+ 1863  source ~/.rvm/scripts/rvm
+ 1864  gem install bundler:2.0.2
+ 1865  mktemp --tmpdir=/root
+ 1866  mktemp
+ 1867  mktemp --tmpdir=/root
+ 1868  gem install bundler:2.0.2
+ 1869  source ~/.rvm/scripts/rvm
+ 1870  gem install bundler:2.0.2
+ 1871  code .
+ 1872  . \curl -sSL https://get.rvm.io | bash -s stable --ruby
+ 1873  \curl -sSL https://get.rvm.io | bash -s stable --ruby
+ 1874  code ~/.zshrc
+ 1875  gem install bundler:2.0.2
+ 1876  rvm
+ 1877  wget -qO-  https://get.rvm.io | bash -s stable --ruby
+ 1878  rvm pkg install openssl
+ 1879  unset rvm_path
+ 1880  curl -sSL https://get.rvm.io | bash -s stable
+ 1881  echo $rvm_path
+ 1882  rvm pkg install openssl
+ 1883  source ~/.rvm/scripts/rvm
+ 1884  rvm pkg install openssl
+ 1885  sudo apt-get install rvm
+ 1886  sudo usermod -a -G rvm jp
+ 1887  gem install bundler:2.0.2
+ 1888  rvmsudo rvm get stable --auto-dotfiles\nrvm fix-permissions system
+ 1889  rvm
+ 1890  gem install bundler:2.0.2
+ 1891  rvmsudo rvm get stable --auto-dotfiles\nrvm fix-permissions system
+ 1892  rvm group add rvm $USER
+ 1893  rvm use ruby-2.6.5\n
+ 1894  code ~/.zshrc
+ 1895  ls
+ 1896  cd Documents/gitWorkspace
+ 1897  l
+ 1898  cd realvtuber
+ 1899  gem instal bundler
+ 1900  gem install bundler
+ 1901  rvm install "ruby-2.6.6"
+ 1902  rvm install "ruby-2.6.4"
+ 1903  cat  /usr/share/rvm/log/1610336156_ruby-2.6.6/update_system.log
+ 1904  sudo apt update\nsudo apt upgrade
+ 1905  sudo apt-get --allow-releaseinfo-change update
+ 1906  rvm install 2.3.1
+ 1907  apt-get remove rvm
+ 1908  sudo apt-get remove rvm
+ 1909  rvm
+ 1910  \curl -sSL https://get.rvm.io | bash -s stable
+ 1911  \curl -sSL https://get.rvm.io | bash -s stable --rails
+ 1912  apt-get install rvm
+ 1913  sudo env | grep rvm_pathapt-get install rvm
+ 1914  env | grep rvm_path
+ 1915  unset rvm_path
+ 1916  curl -sSL https://get.rvm.io | bash -s stable
+ 1917  rvm install "ruby-2.6.4"
+ 1918  rvm install "ruby-2.6.5"
+ 1919  cd ..
+ 1920  ls
+ 1921  cd realvtuber
+ 1922  code .
+ 1923  ls
+ 1924  docker build . --tag realvtube:latest
+ 1925  docker images
+ 1926  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch 04b960d9740b
+ 1927  docker build . --tag realvtube:latest
+ 1928  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch 04b960d9740b
+ 1929  docker images
+ 1930  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v 7b966efbe31c
+ 1931  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/scratch 7b966efbe31c
+ 1932  ls
+ 1933  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/ 7b966efbe31c
+ 1934  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace",target=/workspace \\n -v `pwd`:/var 7b966efbe31c
+ 1935  docker run 7b966efbe31c
+ 1936  docker build . --tag realvtube:latest
+ 1937  docker images
+ 1938  docker run 7b966efbe31c
+ 1939  docker-composeup
+ 1940  docker-compose up
+ 1941  docker-compose run --no-deps web rails new . --force --database=postgresql
+ 1942  docker-compose up --build
+ 1943  docker-compose down
+ 1944  docker-compose up 
+ 1945  docker-compose down
+ 1946  docker-compose up --buid
+ 1947  docker-compose up --build
+ 1948  mkdir ~/.config/chrome-remote-desktop
+ 1949  ls
+ 1950  nvidia-smi
+ 1951  cd Documents
+ 1952  ls
+ 1953  cd gitWorkspace
+ 1954  cd ..
+ 1955  cd stylegan-web
+ 1956  l
+ 1957  python http_server.py
+ 1958  conda activate tf2
+ 1959  python http_server.py
+ 1960  code /etc/gdm3/custom.conf
+ 1961  ls
+ 1962  cd Documents/gitWorkspace
+ 1963  l
+ 1964  cd ..
+ 1965  cd stylegan-web
+ 1966  l
+ 1967  conda activate tf2
+ 1968  python http_server.py 
+ 1969  ls
+ 1970  cd Documents
+ 1971  cd gitWorkspace
+ 1972  git clone 
+ 1973  git clone https://github.com/podgoriskiy/ALAE
+ 1974  git clone https://github.com/johndpope/ALAE
+ 1975  cd ALAE
+ 1976  l
+ 1977  cd ..
+ 1978  rm -rf ALAE
+ 1979  git clone https://github.com/johndpope/ALAE
+ 1980  cd ALAE
+ 1981  conda env list
+ 1982  conda activate torch
+ 1983  ls
+ 1984  python install -r requirements.txt
+ 1985  pip install -r requirements.txt
+ 1986  python interactive_demo.py
+ 1987  l'\nqq\n\n\n`\n'
+ 1988  ls
+ 1989  python interactive_demo.py
+ 1990  ls
+ 1991  cd Documents
+ 1992  l
+ 1993  cd stylegan-web
+ 1994  code .
+ 1995  ifconfig
+ 1996  ls
+ 1997  cd Documents
+ 1998  cd stylegan-web
+ 1999  ls
+ 2000  cd Documents
+ 2001  l
+ 2002  cd stylegan-web
+ 2003  code .
+ 2004  python http_server.py
+ 2005  conda activate tf2
+ 2006  python http_server.py
+ 2007  l
+ 2008  code .
+ 2009  ./generate-cert.sh
+ 2010  python http_server.py
+ 2011  htop
+ 2012  lsof 
+ 2013  lsof -i 8186
+ 2014  lsof -i:8186
+ 2015  kill -9 7017
+ 2016  python http_server.py
+ 2017  lsof -i:8186
+ 2018  kill -9 8507
+ 2019  python http_server.py
+ 2020  lsof -i:8186
+ 2021  kill -9 12859
+ 2022  python http_server.py
+ 2023  lsof -i:8186
+ 2024  kill -9 13440
+ 2025  python http_server.py
+ 2026  code .
+ 2027  lsof -i:8186
+ 2028  kill -9 14155
+ 2029  kill -9  (lsof -i:8186)
+ 2030  python http_server.py
+ 2031  cd /usr/share/polkit-1/actions/\ncp -a  org.freedesktop.color.policy  org.freedesktop.color.policy.orig\nsed -e 's|>auth_admin<|>no<|g'  org.freedesktop.color.policy.orig  >  org.freedesktop.color.policy
+ 2032  sudo su
+ 2033  cd Documents/stylegan-web
+ 2034  l
+ 2035  conda activate tf2
+ 2036  python http_server.py
+ 2037  kill -9  (lsof -i:8186)
+ 2038  code .
+ 2039  lsof -i:8186
+ 2040  pip install freeport
+ 2041  freeport 8186 
+ 2042  kill -9 111564
+ 2043  lsof -i:8186 -t
+ 2044  kill -9 (lsof -i:8186 -t)
+ 2045  ls
+ 2046  python http_server.py
+ 2047  kill -9 (lsof -i:8186 -t)
+ 2048  lsof -i:8186 -t
+ 2049  kill -9 $(lsof -i:8186 -t)
+ 2050  python http_server.py
+ 2051  kill -9 $(lsof -i:8186 -t)
+ 2052  python http_server.py
+ 2053  kill -9 $(lsof -i:8186 -t)
+ 2054  python http_server.py
+ 2055  chmod +x killserver.sh
+ 2056  npm install slim-select
+ 2057  l
+ 2058  nvm
+ 2059  apt-get nodejs
+ 2060  sudo apt-get install nodejs
+ 2061  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+ 2062  code ~/.zshrc
+ 2063  nvm
+ 2064  ls
+ 2065  nvm
+ 2066  cd Documents/stylegan-web
+ 2067  conda activate tf2
+ 2068  npm install slim-select
+ 2069  nvm ls
+ 2070  nvm install 14
+ 2071  nvm alias default 13
+ 2072  nvm alias default 14
+ 2073  npm install slim-select
+ 2074  ls
+ 2075  python http_server.py
+ 2076  ./killserver.sh
+ 2077  python http_server.py
+ 2078  ./killserver.sh
+ 2079  python http_server.py
+ 2080  ./killserver.sh
+ 2081  atob
+ 2082  sh python http_server.py
+ 2083  ./killserver.sh
+ 2084  ./restart.sh
+ 2085  chmod +x restart.sh
+ 2086  ./restart.sh
+ 2087  npm install
+ 2088  npm install rollup --save
+ 2089  ./restart.sh
+ 2090  npm install rollup -g
+ 2091  ./restart.sh
+ 2092  nvm install 15
+ 2093  nvm use 15
+ 2094  npm install
+ 2095  ./restart.sh
+ 2096  code rollup.config.js
+ 2097  ./restart.sh
+ 2098  code /etc/polkit-1/localauthority.conf.d/ 
+ 2099  ks
+ 2100  ls
+ 2101  conda activate tf2
+ 2102  cd Documents/stylegan-web
+ 2103  l
+ 2104  ./restart.sh
+ 2105  v-select
+ 2106  npm install v-select
+ 2107  npm install vue-select
+ 2108  npm update vue
+ 2109  ./restart.sh
+ 2110  OA
+ 2111  ./restart.sh
+ 2112  OA
+ 2113  ./restart.sh
+ 2114  ls
+ 2115  cd ..
+ 2116  git clone https://github.com/jasonlbx13/FaceHack.git
+ 2117  cd FaceHack
+ 2118  l
+ 2119  cond env list
+ 2120  conda env list
+ 2121  conda activate tf1-nv
+ 2122  pip install -r requirements
+ 2123  l
+ 2124  cd face_gan
+ 2125  l
+ 2126  python main.py
+ 2127  cd ..
+ 2128  git clone https://github.com/johndpope/my-stylegan2-face-editing-app.git
+ 2129  l
+ 2130  cd my-stylegan2-face-editing-app
+ 2131  l
+ 2132  python main.py
+ 2133  pip install flask_socketio
+ 2134  python main.py
+ 2135  pip install mpld3
+ 2136  pip install flask_socketio
+ 2137  python main.py
+ 2138  cd client
+ 2139  ll
+ 2140  conda activate tf1-nv
+ 2141  ls
+ 2142  npm install
+ 2143  l
+ 2144  cd src
+ 2145  ls
+ 2146  cd ..
+ 2147  l
+ 2148  npm run serve
+ 2149  cd ..
+ 2150  cd gitWorkspace
+ 2151  git clone https://github.com/jasonlbx13/FaceHack
+ 2152  cd Face
+ 2153  cd FaceHack
+ 2154  l
+ 2155  cat requirements
+ 2156  conda activate tf1-nv
+ 2157  l
+ 2158  cd face_gan
+ 2159  l
+ 2160  python web_app.py
+ 2161  code .
+ 2162  l
+ 2163  conda activate tf1-nv
+ 2164  ls
+ 2165  python web_app.py
+ 2166  conda activate tf2
+ 2167  python web_app.py
+ 2168  git stash 
+ 2169  git pull
+ 2170  cd ..
+ 2171  rm -rf FaceHack
+ 2172  git clone https://github.com/johndpope/FaceHack
+ 2173  cd FaceHack
+ 2174  l
+ 2175  conda activate tf2
+ 2176  l
+ 2177  cd face_gan
+ 2178  l
+ 2179  code .
+ 2180  python web_app.py
+ 2181  l
+ 2182  cd ..
+ 2183  l
+ 2184  pip install requirements
+ 2185  l
+ 2186  cd face_gan
+ 2187  l
+ 2188  python web_app.py
+ 2189  pip install streamlit
+ 2190  python web_app.py
+ 2191  python main.py
+ 2192  pip install keras
+ 2193  python main.py
+ 2194  pip install dlib
+ 2195  python main.py
+ 2196  code .
+ 2197  jupyter notebook
+ 2198  code .
+ 2199  conda activate tf2
+ 2200  pip install moviepy
+ 2201  mkdir output
+ 2202  cd output
+ 2203  mkdir meiyi
+ 2204  l
+ 2205  cd meiyi
+ 2206  l
+ 2207  nvdia-smi
+ 2208  nvidia-smi
+ 2209  cd ..
+ 2210  l
+ 2211  cd ..
+ 2212  mkdir generated_images
+ 2213  ls
+ 2214  cd Documents
+ 2215  cd gitWorkspace
+ 2216  ls
+ 2217  git clone https://github.com/Gvanderl/StyleSegments.git
+ 2218  cd StyleSegments
+ 2219  l
+ 2220  pip install .
+ 2221  python install
+ 2222  pipenv install
+ 2223  python main.py
+ 2224  pip install keras
+ 2225  ls
+ 2226  python main.py
+ 2227  conda env ls
+ 2228  conda env list
+ 2229  conda activate faceswap
+ 2230  python main.py
+ 2231  pip install torchvision
+ 2232  python main.py
+ 2233  code .
+ 2234  conda env create --name stylesegment
+ 2235  conda env create --name style
+ 2236  conda create --name style
+ 2237  conda activate style
+ 2238  ls
+ 2239  cat Pipfile
+ 2240  pip install torch opencv-python torchvision tqdm scikit-image keras tensorflow-gpu 
+ 2241  p install torch opencv-python torchvision tqdm scikit-image keras tensorflow-gpu 
+ 2242  conda create --name style python=3.7
+ 2243  pip install torch opencv-python torchvision tqdm scikit-image keras tensorflow-gpu 
+ 2244  l
+ 2245  python main.py
+ 2246  code .
+ 2247  python main.py
+ 2248  code .
+ 2249  python main.py
+ 2250  pip uninstall torch torchvision torchaudio
+ 2251  pip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+ 2252  python main.py
+ 2253  nvidia-smi
+ 2254  ip install torch opencv-python torchvision tqdm scikit-image keras tensorflow-gpu
+ 2255  ls
+ 2256  docker build . --tag style:latest
+ 2257  docker ps
+ 2258  docker images
+ 2259  docker run --name style
+ 2260  docker run --it style
+ 2261  docker run -dp 3000:3000  style:latest
+ 2262  docker ps 
+ 2263  docker run style:latest
+ 2264  docker ps
+ 2265  docker images
+ 2266  docker run -it --entrypoint bash style:latest
+ 2267  docker run -it --entrypoint bash style:latest --runtime=nvidia
+ 2268  docker build . --tag realvtube:latest
+ 2269  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="./",target=/workspace \\n -v `pwd`:/var stylegan:latest
+ 2270  pwd
+ 2271  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  \\n -v `pwd`:/var stylegan:latest
+ 2272  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --entrypoint bash style:latest 
+ 2273  cat Dockerfile
+ 2274  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --entrypoint bash style:latest 
+ 2275  docker ps
+ 2276  docker commit 8e9cd2087b13 stylegan
+ 2277  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --entrypoint bash style:latest 
+ 2278  pwd
+ 2279  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="./",target=/workspace \\n -v `pwd`:/var stylegan:latest
+ 2280  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --entrypoint bash style:latest  --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace/StyleSegments",target=/workspace \\n -v `pwd`:/var 
+ 2281  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="./",target=/workspace \\n -v `pwd`:/var stylegan:latest
+ 2282  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/gitWorkspace/StyleSegments",target=/workspace \\n -v `pwd`:/var stylegan:latest
+ 2283  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --entrypoint bash style:latest 
+ 2284  code .
+ 2285  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest
+ 2286  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest
+ 2287  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest
+ 2288  docker build . --tag style:latest
+ 2289  ls
+ 2290  cd cache
+ 2291  ls
+ 2292  cd ..
+ 2293  rm -rf cache
+ 2294  sudo rm -rf cache
+ 2295  docker build . --tag style:latest
+ 2296  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest
+ 2297  docker ps
+ 2298  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var zsh stylegan:latest
+ 2299  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest --entrypoint zsh
+ 2300  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var zsh stylegan:latest
+ 2301  ocker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all -it --entrypoint bash style:latest 
+ 2302  docker build . --tag style:latest
+ 2303  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var stylegan:latest
+ 2304  ls
+ 2305  cd Documents
+ 2306  cd gitWorkspace
+ 2307  ls
+ 2308  git clone https://github.com/podgorskiy/ALAE.git
+ 2309  cd ALAE
+ 2310  code .
+ 2311  docker build . --tag ale:latest
+ 2312  l
+ 2313  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var alae:latest
+ 2314  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var ale:latest
+ 2315  docker build . --tag ale:latest
+ 2316  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var alae:latest
+ 2317  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var ale:latest
+ 2318  docker build . --tag alae:latest
+ 2319  rm -rf cache
+ 2320  sudo rm -rf cache
+ 2321  docker build . --tag alae:latest
+ 2322  ocker build . --tag ale:latest
+ 2323  docker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var alae:latest
+ 2324  l
+ 2325  cd Documents
+ 2326  cd gitWorkspace
+ 2327  git clone https://github.com/diyiiyiii/MCCNet.git
+ 2328  cd MCCNet
+ 2329  l
+ 2330  conda env ls
+ 2331  conda env list
+ 2332  conda activate torch
+ 2333  l
+ 2334  ls
+ 2335  open .
+ 2336  nautilus .
+ 2337  l
+ 2338  mkdir experiments
+ 2339  ls
+ 2340  mv vgg_normalised.pth experiments
+ 2341  ls
+ 2342  mkdir style
+ 2343  mkdir content
+ 2344  ffmpeg 
+ 2345  apt-get install ffmpeg
+ 2346  sudo apt-get install ffmpeg
+ 2347  l
+ 2348  f fps=1 out%d.png
+ 2349  ls
+ 2350  mv ~/Downloads/1.mp4 .
+ 2351  l
+ 2352  ffmpeg -i 1.mp4 -vf fps=30 content/out%d.png
+ 2353  ls
+ 2354  cd content
+ 2355  l
+ 2356  cd ..
+ 2357  ls
+ 2358  l
+ 2359  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2360  mkdir out
+ 2361  conda install cudatoolkit=11.0.3
+ 2362  conda install -c conda-forge  cudatoolkit=11.0.3
+ 2363  conda install -c conda-forge  cudatoolkit=11.2
+ 2364  conda install -c conda-forge  cudatoolkit=11.0.3
+ 2365  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2366  pip install matplot
+ 2367  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2368  pip install open-cv2
+ 2369  pip install open-cv
+ 2370  pip install opencv
+ 2371  pip install pip install opencv-python
+ 2372  pip install opencv-python
+ 2373  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2374  ls
+ 2375  mv decoder_iter_160000.pth experiments
+ 2376  l
+ 2377  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2378  mv mcc_module_iter_160000.pth experiments
+ 2379  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2380  conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch-nightly
+ 2381  OA
+ 2382  conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch-nightly
+ 2383  pip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+ 2384  pip uninstall torch
+ 2385  pip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+ 2386  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2387  l
+ 2388  nda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch-nightly
+ 2389  fmpeg -i 1.mp4 -vf fps=30 content/out%d.jpg
+ 2390  rm -rf content
+ 2391  ffmpeg -i 1.mp4 -vf fps=30 content/out%d.jpg
+ 2392  mkdir content
+ 2393  ffmpeg -i 1.mp4 -vf fps=30 content/out%d.jpg
+ 2394  l
+ 2395  cd content
+ 2396  l
+ 2397  cd ..
+ 2398  ls
+ 2399  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2400  sudo apt install -y ubuntu-restricted-extras
+ 2401  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2402  code .
+ 2403  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2404  rm -rf out
+ 2405  mkdir out
+ 2406  python test_video.py  --content_dir content/ --style_dir style/    --output out
+ 2407  cd Documents/gitWorkspace
+ 2408  git clone https://github.com/NVlabs/stylegan2-ada-pytorch
+ 2409  cd stylegan2-ada-pytorch
+ 2410  l
+ 2411  conda activate torch
+ 2412  code .
+ 2413  docker build --tag sg2ada:latest .
+ 2414  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+ 2415  l
+ 2416  cd out
+ 2417  l
+ 2418  nautilus .
+ 2419  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/afhqwild.pkl
+ 2420  cd ..
+ 2421  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/afhqwild.pkl
+ 2422  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+ 2423  cker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+ 2424  ls
+ 2425  dcker run  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --gpus all  -it --rm --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --mount type=bind,source="/home/jp/Documents/styleganWorkspace",target=/styleganWorkspace \\n -v `pwd`:/var alae:latest
+ 2426  l'\n\nwq\nq\n`\n[200~WORKDIR~l\nls\n[200~WORKDIR~WORKDIR'
+ 2427  ls
+ 2428  ./docker_run.sh
+ 2429  code .
+ 2430  ./docker_run.sh
+ 2431  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=/workspace/metfaces.pkl
+ 2432  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=/workspace/ffhq-cartoon-blended1.pkl
+ 2433  ./docker_run.sh python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\n    --network=/workspace/AlfredENeuman24_ADA.pkl
+ 2434  ./docker_run.sh python style_mixing.py --outdir=out --rows=85,100,75,458,1500 --cols=55,821,1789,293\n    --network=/workspace/AlfredENeuman24_ADA.pkl
+ 2435  ls
+ 2436  cd Documents
+ 2437  ls
+ 2438  cd gitWorkspace
+ 2439  git clone https://github.com/speedinghzl/CCNet
+ 2440  cd CCNet
+ 2441  l
+ 2442  conda env list
+ 2443  conda activate torch
+ 2444  ls
+ 2445  ./run_local.sh
+ 2446  chmod +x run_local.sh
+ 2447  ./run_local.sh
+ 2448  pip install python-opencv
+ 2449  pip install opencv-python
+ 2450  ./run_local.sh
+ 2451  cd ..
+ 2452  git clone https://github.com/speedinghzl/CCNet/tree/pytorch-1.1
+ 2453  git clone https://github.com/speedinghzl/CCNet
+ 2454  git clone https://github.com/speedinghzl/CCNet CCNet-1
+ 2455  cd CCNet
+ 2456  l
+ 2457  cd ..
+ 2458  cd CCNet-1
+ 2459  l
+ 2460  git checkout pytorch-1.1
+ 2461  l
+ 2462  ./run_local.sh
+ 2463  chmod +x run_local.sh
+ 2464  ./run_local.sh
+ 2465  l
+ 2466  pip install inplace-abn
+ 2467  cd ..
+ 2468  git clone https://github.com/mapillary/inplace_abn.git\ncd inplace_abn\npython setup.py install\ncd scripts\npip install -r requirements.txt
+ 2469  echo $LD_LIBRARY_PATH
+ 2470  cd /usr/local/cuda-11.2/lib64
+ 2471  l
+ 2472  nvcc
+ 2473  cd /usr/local/cuda
+ 2474  l
+ 2475  cd lib64
+ 2476  nvcc
+ 2477  pwd
+ 2478  code .
+ 2479  code ~/.zshrc
+ 2480  cd /usr/bin
+ 2481  ls
+ 2482  gcc
+ 2483  gcc --help
+ 2484  ls
+ 2485  cd ~/Documents
+ 2486  l
+ 2487  cd gitWorkspace
+ 2488  l
+ 2489  cd CCNet-1
+ 2490  l
+ 2491  ./run_local.sh
+ 2492  pip install inplace_abn
+ 2493  ./run_local.sh
+ 2494  pip install rcca
+ 2495  code .
+ 2496  cd ..
+ 2497  git clone https://github.com/NVIDIA/apex
+ 2498  cd apex
+ 2499  pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+ 2500  pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" pytorch-extension
+ 2501  cd ..
+ 2502  git clone  https://github.com/artitw/apex.git apex2
+ 2503  cd apex2
+ 2504  l
+ 2505  pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" pytorch-extension\n
+ 2506  cd ..
+ 2507  cd inplace_abn
+ 2508  conda activate torch
+ 2509  python setup.py install
+ 2510  cd ..
+ 2511  l
+ 2512  cd CCNet-1/1
+ 2513  cd CCNet-1
+ 2514  l
+ 2515  ./run_local.sh
+ 2516  history
+ 2517  ./run_local.sh
+ 2518  pip install -v --disable-pip-version-check --no-cache-dir ./
+ 2519  cd ..
+ 2520  cd apex
+ 2521  pip install -v --disable-pip-version-check --no-cache-dir ./
+ 2522  cd ..
+ 2523  cd CCNet-1
+ 2524  l
+ 2525  ./run_local.sh
+ 2526  cd ..
+ 2527  ls
+ 2528  cd CCNet
+ 2529  l
+ 2530  code .
+ 2531  cd ..
+ 2532  git clone https://github.com/speedinghzl/CCNet/tree/pure-python
+ 2533  git clone https://github.com/speedinghzl/CCNet CCNet-pure
+ 2534  cd CCNet-pure
+ 2535  l
+ 2536  ./run_local.sh
+ 2537  chmod +x run_local.sh
+ 2538  l
+ 2539  conda activate torch
+ 2540  ./run_local.sh
+ 2541  git checkout pure-python
+ 2542  ./run_local.sh
+ 2543  l
+ 2544  code .
+ 2545  ./run_local.sh
+ 2546  cd ..
+ 2547  l
+ 2548  cd CCNet
+ 2549  l
+ 2550  git checkout 38dd50c 
+ 2551  cd ..
+ 2552  cd CCNet-1
+ 2553  cd ..
+ 2554  l
+ 2555  cd CCNet-pure
+ 2556  l
+ 2557  git checkout 38dd50c 
+ 2558  cd ..
+ 2559  git clone https://github.com/Serge-weihao/CCNet-Pure-Pytorch.git
+ 2560  cd CCNet-Pure-Pytorch
+ 2561  git checkout bb502bb32f1d8eadbd7fb06152be570c23e9fbd1
+ 2562  ./run_local.sh
+ 2563  conda activate torch
+ 2564  chmod +x run_local.sh
+ 2565  conda activate torch
+ 2566  ./run_local.sh
+ 2567  ./run_local.sh > results.txt
+ 2568  code .
+ 2569  l
+ 2570  pip install tensorboard
+ 2571  ./run_local.sh > results.txt
+ 2572  pip install tensorboardx
+ 2573  ./run_local.sh 
+ 2574  mkdir /data
+ 2575  sudo mkdir /data
+ 2576  sudo mkdir /data/datasets/cityscapes
+ 2577  sudo mkdir -R /data/datasets/cityscapes
+ 2578  sudo mkdir -r /data/datasets/cityscapes
+ 2579  sudo mkdir -p /data/datasets/cityscapes
+ 2580  mkdir snapshots
+ 2581  sudo mkdir -p /data/datasets
+ 2582  cd /
+ 2583  l
+ 2584  cd data
+ 2585  cd datasets
+ 2586  nautilus .
+ 2587  pwd
+ 2588  nautilus
+ 2589  nautilus .
+ 2590  code .
+ 2591  cd ..
+ 2592  l
+ 2593  cd CCNet-Pure-Pytorch
+ 2594  code .
+ 2595  ls
+ 2596  cd Documents
+ 2597  cd gitWorkspace
+ 2598  l
+ 2599  git clone AttributeError: module 'torch' has no attribute 'hub'
+ 2600  ls
+ 2601  cd Documents
+ 2602  l
+ 2603  cd gitWorkspace
+ 2604  l
+ 2605  cd ..
+ 2606  l
+ 2607  cd stylegan-web
+ 2608  l
+ 2609  conda env lits
+ 2610  conda env list
+ 2611  conda activate tf2
+ 2612  ls
+ 2613  cat killserver.sh
+ 2614  ./restart.sh `\n`
+ 2615  conda env list
+ 2616  conda activate torch
+ 2617  python 
+ 2618  ls
+ 2619  cd Documents
+ 2620  l
+ 2621  cd gitWorkspace
+ 2622  l
+ 2623  git clone https://github.com/lucidrains/lambda-networks.git
+ 2624  cd lambda-networks
+ 2625  l
+ 2626  pip install lambda-networks
+ 2627  code .
+ 2628  python test.py
+ 2629  npm install livepython -g
+ 2630  livepython test.py
+ 2631  source /home/jp/miniconda3/bin/activate
+ 2632  conda activate torch
+ 2633  /home/jp/miniconda3/envs/torch/bin/python /home/jp/Documents/gitWorkspace/lambda-networks/test.py
+ 2634  cd ..
+ 2635  git clone https://github.com/frgfm/Holocron.git
+ 2636  cd Holocron
+ 2637  code .
+ 2638  /bin/python3 /home/jp/Documents/gitWorkspace/Holocron/test/test_nn.py
+ 2639  ls
+ 2640  conda activate torch
+ 2641  /bin/python3 /home/jp/Documents/gitWorkspace/Holocron/test/test_nn.py
+ 2642  conda install -c frgfm pylocron
+ 2643  python -c "import torch; print(torch.__version__)"
+ 2644  pip install numpy\npip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+ 2645  /bin/python3 /home/jp/Documents/gitWorkspace/Holocron/test/test_nn.py
+ 2646  python  test/test_nn.py
+ 2647  python  setup.py install
+ 2648  python  test/test_nn.py
+ 2649  /bin/python3 /home/jp/Documents/gitWorkspace/Holocron/test/test_nn.py
+ 2650  python /home/jp/Documents/gitWorkspace/Holocron/test/test_nn.py
+ 2651  cls
+ 2652  '/home/jp/Downloads/google-chrome-stable_current_amd64.deb' 
+ 2653  chmod +x '/home/jp/Downloads/google-chrome-stable_current_amd64.deb' 
+ 2654  '/home/jp/Downloads/google-chrome-stable_current_amd64.deb' 
+ 2655  sudo apt install 
+ 2656  sudo apt install '/home/jp/Downloads/google-chrome-stable_current_amd64.deb' 
+ 2657  ls
+ 2658  chmod +x test.sh
+ 2659  ./test.sh
+ 2660  cd /opt/google
+ 2661  cd chrome-remote-desktop
+ 2662  start-host --code="4/0AX4XfWh0TiJ0WNa37NpKQ6_PLggfIwxs-sivQ-588gEwk699z-Lww8ARxZr0c0xTVlly7g" \\n--redirect-url=https://talkgadget.google.com/talkgadget/blank \\n--name="POP-OS2"
+ 2663  ls
+ 2664  ./start-host --code="4/0AX4XfWh0TiJ0WNa37NpKQ6_PLggfIwxs-sivQ-588gEwk699z-Lww8ARxZr0c0xTVlly7g" \\n--redirect-url=https://talkgadget.google.com/talkgadget/blank \\n--name="POP-OS2"
+ 2665  ./test2.sh
+ 2666  ls
+ 2667  DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AX4XfWjIhZmstOJRkaNnSshJoO-VA-xFWME8tPCb18B9FRh2EGYmTYyEx5yakRLTh-qspQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+ 2668  apt list --upgradable
+ 2669  ls
+ 2670  cd Documents
+ 2671  ls
+ 2672  conda activate torch
+ 2673  ls
+ 2674  sudo apt-get update
+ 2675  sudo apt-get dist-upgrade
+ 2676  ls
+ 2677  sudo killall Xorg
+ 2678  sudo service lightdm restart
+ 2679  htop
+ 2680  sudo systemctl status xrdp
+ 2681  sudo apt install xrdp 
+ 2682  sudo systemctl status xrdp
+ 2683  sudo adduser xrdp ssl-cert  
+ 2684  sudo systemctl enable xrdp
+ 2685  sudo service chrome-remote-desktop restart
+ 2686  service chrome-remote-desktop restart
+ 2687  systemctl status chrome-remote-desktop.service
+ 2688  who -u
+ 2689  kill 34233
+ 2690  sudo kill 34233
+ 2691  who
+ 2692  sudo service chrome-remote-desktop restart
+ 2693  systemctl unmask chrome-remote-desktop.service && systemctl start chrome-remote-desktop.service
+ 2694  mkdir ~/.config/chrome-remote-desktop fix
+ 2695  htop
+ 2696  sudo service chrome-remote-desktop restart
+ 2697  udo systemctl stop chrome-remote-desktop.service
+ 2698  sudo systemctl stop chrome-remote-desktop.service
+ 2699  htop
+ 2700  sudo systemctl restart chrome-remote-desktop.service
+ 2701  sudo systemctl start chrome-remote-desktop.service
+ 2702  sudo cp /opt/google/chrome-remote-desktop/chrome-remote-desktop /opt/google/chrome-remote-desktop/chrome-remote-desktop.orig\n
+ 2703  sudo systemctl start chrome-remote-desktop.service
+ 2704  sudo systemctl restart chrome-remote-desktop.service
+ 2705  sudo systemctl status chrome-remote-desktop@sudo systemctl status chrome-remote-desktop@sudo systemctl status chrome-remote-desktop@sudo systemctl status chrome-remote-desktopsudo systemctl status chrome-remote-desktopsudo systemctl status chrome-remote-desktop@$USER
+ 2706  q
+ 2707  sudo systemctl status chrome-remote-desktop@jp
+ 2708  sudo systemctl restart chrome-remote-desktop@jp
+ 2709  sudo systemctl status chrome-remote-desktop@jp
+ 2710  DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AX4XfWj5svCOBBByjIrdtedJnN0EYCO8ADFRrj6HwCllgUrDmviFQv9kNLElGTBmY2a32w" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+ 2711  sudo systemctl status chrome-remote-desktop@jp
+ 2712  cat /etc/ssh/sshd_config
+ 2713  sudo systemctl status chrome-remote-desktop@jp
+ 2714  cat $$DISPLAY 
+ 2715  sudo systemctl status chrome-remote-desktop@jp
+ 2716  echo $DISPLAY
+ 2717  ps ax | grep 
+ 2718  sudo systemctl status chrome-remote-desktop@jp
+ 2719  sudo systemctl restart chrome-remote-desktop@jp
+ 2720  sudo systemctl status chrome-remote-desktop@jp
+ 2721  DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AX4XfWiOBOc9AJLnHEWpUSrOLLNwvSno8yiiIJp4Xb8ZbIuP4UaRYD3zaLwUwErwYyX9Bw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+ 2722  DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AX4XfWjd7eZP1_Y3uyX59emxmGJO5v1BmYd-AjaNeXs9VxfOAJm6H5eikAWWpJVkUer8Nw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+ 2723  sudo systemctl status chrome-remote-desktop@jp
+ 2724  w
+ 2725  sudo systemctl stop xrdp
+ 2726  sudo systemctl status xrdp
+ 2727  sudo systemctl restart xrdp
+ 2728  sudo systemctl status xrdp
+ 2729  xrdp --version
+ 2730  ps u -u "$USER" | awk '/xrdp/ && ! /awk / {system("kill "$2)}'
+ 2731  pgrep gnome-session
+ 2732  cat ~/.xsession-errors
+ 2733  rm ~/.xsession-errors
+ 2734  cat ~/.xsession-errors
+ 2735  cat /etc/xdg/lxsession/LXDE
+ 2736  ufw allow 3389
+ 2737  sudo ufw allow 3389
+ 2738  apt install net-tools  
+ 2739  sudo apt install net-tools  
+ 2740  netstat -r -n
+ 2741  ip -o -f inet addr show | awk '/scope global/ {print $2, $4}'
+ 2742  ip route | grep default
+ 2743  cd /home/jp
+ 2744  sudo cp Xwrapper.config /etc/X11/Xwrapper.config
+ 2745  cat /etc/X11/Xwrapper.config
+ 2746  sudo systemctl restart xrdp
+ 2747  sudo systemctl status xrdp
+ 2748  cd /home/jpfree -h
+ 2749  free -h
+ 2750  sudo systemctl status chrome-remote-desktop@jp.service
+ 2751  screen -d -r local
+ 2752  xhost +si:localuser:$USER
+ 2753  nvidia-smi
+ 2754  sudo reboot
+ 2755  '/home/jp/Documents/mouse.sh' 
+ 2756  sudo /opt/google/chrome-remote-desktop/chrome-remote-desktop --add-user-as-root $USER\n/opt/google/chrome-remote-desktop/chrome-remote-desktop --start
+ 2757  sudo apt-get update
+ 2758  apt-get install timeshift -y
+ 2759  sudo apt-get install timeshift -y
+ 2760  '/home/jp/Documents' 
+ 2761  cd ..
+ 2762  ls
+ 2763  nvidia-smi
+ 2764  whereis nvidia
+ 2765  prime-select query nvidia
+ 2766  prime-select 
+ 2767  chmod +x '/home/jp/Downloads/NVIDIA-Linux-x86_64-465.31.run' 
+ 2768  /home/jp/Downloads/NVIDIA-Linux-x86_64-465.31.run
+ 2769  chmod +x '/home/jp/Downloads/NVIDIA-Linux-x86_64-465.31.run' 
+ 2770  sudo /home/jp/Downloads/NVIDIA-Linux-x86_64-465.31.run
+ 2771  timeshift
+ 2772  timeshift --list
+ 2773  sudo timeshift --list
+ 2774  timeshift --restore
+ 2775  sudo timeshift --restore
+ 2776  cd dev
+ 2777  cd /dev
+ 2778  ls
+ 2779  cd sda1
+ 2780  cd sda2
+ 2781  cd sda3
+ 2782  ps axu | grep -v grep | grep policykit
+ 2783  timeshift --restore
+ 2784  sudo timeshift --restore
+ 2785  ls
+ 2786  nvidia-msi
+ 2787  nvidia-smi
+ 2788  sudo reboot
+ 2789  nvidia-smi
+ 2790  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin\nsudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600\nwget https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda-repo-ubuntu2004-11-4-local_11.4.0-470.42.01-1_amd64.deb\nsudo dpkg -i cuda-repo-ubuntu2004-11-4-local_11.4.0-470.42.01-1_amd64.deb\nsudo apt-key add /var/cuda-repo-ubuntu2004-11-4-local/7fa2af80.pub\nsudo apt-get update\nsudo apt-get -y install cuda
+ 2791  wget https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda_11.4.0_470.42.01_linux.run\nsudo sh cuda_11.4.0_470.42.01_linux.run
+ 2792  apt-get install axel
+ 2793  sudo apt-get install axel
+ 2794  kill -9 6305
+ 2795  sudo kill -9 6305
+ 2796  sudo apt-get install axel
+ 2797  axel -a -n 4 https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda_11.4.0_470.42.01_linux.run
+ 2798  sudo apt-get install aria2
+ 2799  aria2 
+ 2800  aria
+ 2801  which aria2
+ 2802  ./aria2
+ 2803  sudo apt autoremove
+ 2804  cat /var/log/cuda-installer.log 
+ 2805  sudo apt-get remove --purge nvidia-*
+ 2806  /usr/bin/nvidia-uninstall
+ 2807  nvidia-smi
+ 2808  which nvidia-smi
+ 2809  dpkg -l | grep -i nvidia
+ 2810  sudo nvidia-uninstall
+ 2811  nvidia-smi
+ 2812  sudo apt purge nvidia-465.31
+ 2813  sudo apt purge nvidia-465
+ 2814  sudo apt-get purge nvidia-current\n
+ 2815  sudo apt-get purge nvidia-465\n
+ 2816  dpkg -l | grep nvidia-driver
+ 2817  sudo apt-get purge nvidia-driver-465\n
+ 2818  nvidia-smi
+ 2819  sudo apt-get purge nvidia-driver-455\n
+ 2820  sudo apt autoremove
+ 2821  sudo reboot
+ 2822  ls
+ 2823  cd Downloads/`\n\nq\n`
+ 2824  l
+ 2825  sudo '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 2826  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 2827  nvidia-smi
+ 2828  cat /var/log/cuda-installer.log
+ 2829  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' --tmpdir /scratch
+ 2830  mkdir /scratch
+ 2831  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' --tmpdir ./scratch
+ 2832  mkdir ./scratch
+ 2833  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' --tmpdir ./scratch
+ 2834  sudo sh '/home/jp/Desktop/NVIDIA-Linux-x86_64-470.42.01.run' 
+ 2835  nvidia-smi
+ 2836  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 2837  conda env ls
+ 2838  conda env list
+ 2839  cd ..
+ 2840  ls
+ 2841  cd Documents
+ 2842  l
+ 2843  git clone https://github.com/YuvalNirkin/fsgan.git
+ 2844  cd fsgan
+ 2845  l
+ 2846  sudo apt-get install build-essential cmake unzip pkg-config
+ 2847  sudo apt-get install libjpeg-dev libpng-dev \nsudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \nsudo apt-get install libxvidcore-dev libx264-dev
+ 2848  sudo apt-get install libatlas-base-dev gfortran
+ 2849  sudo apt-get install python3-dev
+ 2850  cd ..
+ 2851  ls
+ 2852  mv fsgan gitWorkspace
+ 2853  ls
+ 2854  cd gitWorkspace
+ 2855  l
+ 2856  git clone https://github.com/YuvalNirkin/face_detection_dsfd\ngit clone https://github.com/YuvalNirkin/fsgan
+ 2857  code .
+ 2858  pwd
+ 2859  echo 'export PYTHONPATH=$PYTHONPATH:/home/jp/Documents/gitWorkspace' >> ~/.profile\n
+ 2860  source ~/.profile
+ 2861  cd fsgan
+ 2862  sudo apt install libopencv-dev python3-opencv
+ 2863  python3 -c "import cv2; print(cv2.__version__)"
+ 2864  pkg-config --modversion opencv4
+ 2865  sudo apt install build-essential cmake git pkg-config libgtk-3-dev \\n    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \\n    libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \\n    gfortran openexr libatlas-base-dev python3-dev python3-numpy \\n    libtbb2 libtbb-dev libdc1394-22-dev libopenexr-dev \\n    libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+ 2866  mkdir ~/opencv_build && cd ~/opencv_build\ngit clone https://github.com/opencv/opencv.git\ngit clone https://github.com/opencv/opencv_contrib.git
+ 2867  cd..
+ 2868  l
+ 2869  cd ..
+ 2870  l
+ 2871  cd opencv_build
+ 2872  l
+ 2873  cmake -D CMAKE_BUILD_TYPE=RELEASE \\n    -D CMAKE_INSTALL_PREFIX=/usr/local \\n    -D INSTALL_C_EXAMPLES=ON \\n    -D INSTALL_PYTHON_EXAMPLES=ON \\n    -D OPENCV_GENERATE_PKGCONFIG=ON \\n    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \\n    -D BUILD_EXAMPLES=ON ..
+ 2874  ls
+ 2875  cd ~/opencv_build/opencv\nmkdir -p build && cd build
+ 2876  cmake -D CMAKE_BUILD_TYPE=RELEASE \\n    -D CMAKE_INSTALL_PREFIX=/usr/local \\n    -D INSTALL_C_EXAMPLES=ON \\n    -D INSTALL_PYTHON_EXAMPLES=ON \\n    -D OPENCV_GENERATE_PKGCONFIG=ON \\n    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \\n    -D BUILD_EXAMPLES=ON ..
+ 2877  make -j8
+ 2878  sudo snap install --classic code
+ 2879  sudo snap install --classic code\n
+ 2880  sudo snap install snap-store
+ 2881  conda create --name fsgan
+ 2882  conda create --name fsgan --python=3.9
+ 2883  conda create --name fsgan python=3.9
+ 2884  conda activate fsgan
+ 2885  pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+ 2886  code
+ 2887  cd ..
+ 2888  cd Documents/gitWorkspace
+ 2889  cd fsgan
+ 2890  nautilus
+ 2891  nautilus .
+ 2892  python download_fsgan_models.py -m v2
+ 2893  conda activate fsgan
+ 2894  code ~/.zprofile
+ 2895  conda activate fsgan
+ 2896  python download_fsgan_models.py -m v2
+ 2897  pip install requests
+ 2898  python download_fsgan_models.py -m v2
+ 2899  pip install tqdm
+ 2900  python download_fsgan_models.py -m v2
+ 2901  sudo add-apt-repository -y ppa:teejee2008/timeshift\nsudo apt-get update\nsudo apt-get install timeshift
+ 2902  inference
+ 2903  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2904  pip install matplotlib
+ 2905  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2906  pip install opencv-python
+ 2907  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2908  pip install scipy
+ 2909  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2910  pip install python-ffmpeg
+ 2911  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2912  pip install yacs
+ 2913  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2914  pip uninstall python-ffmpeg
+ 2915  pip install ffmpeg-python
+ 2916  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2917  sudo add-apt-repository ppa:jonathonf/ffmpeg-4\nsudo apt-get update\nsudo apt-get install ffmpeg
+ 2918  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth\n
+ 2919  python swap.py ../docs/examples/shinzo_abe.mp4 -t ../docs/examples/conan_obrien.mp4 -o . --finetune --finetune_save --seg_remove_mouth --encoder_codec mp4v\n
+ 2920  l
+ 2921  nautilus .
+ 2922  conda activate fsgan
+ 2923  cd Documents/gitWorkspace
+ 2924  cd fsgan
+ 2925  l
+ 2926  cd ..
+ 2927  cd stylegan2-ada
+ 2928  l
+ 2929  history
+ 2930  history > test.txt
+ 2931  conda activate tf2
+ 2932  python projector.py --outdir=out --target=andrew.png \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl\n 1471  
+ 2933  python projector.py --outdir=out --target=andrew.png   --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl  
+ 2934  cd /
+ 2935  ls
+ 2936  python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849     --network=AlfredENeuman24_ADA.pkl
+ 2937  pip install opensimplex
+ 2938  python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849     --network=AlfredENeuman24_ADA.pkl
+ 2939  conda activate tf2
+ 2940  python3 generate.py --outdir=out --trunc=1 --seeds=85,265,297,849     --network=AlfredENeuman24_ADA.pkl\n
+ 2941  python3 generate.py     --network=AlfredENeuman24_ADA.pkl\n
+ 2942  python3 generate.py   generate-latent-walk  --network=AlfredENeuman24_ADA.pkl\n
+ 2943  python generate.py --help
+ 2944  git status
+ 2945  git branch
+ 2946  git fetch
+ 2947  python projector.py --outdir=out --target=targetimg.png \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2948  python projector.py --outdir=out --target=targetimg.jpg \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2949  python generate.py --outdir=out --dlatents=out/dlatents.npz \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2950  python generate.py generate-images --outdir=out --dlatents=out/dlatents.npz \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2951  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out --dlatents=out/dlatents.npz \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2952  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+ 2953  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 2954  nvcc --help
+ 2955  conda activate tf2
+ 2956  pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.5.0-cp39-cp39-manylinux2010_x86_64.whl
+ 2957  python --versoin
+ 2958  python --version
+ 2959  pip intsall https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.5.0-cp38-cp38-manylinux2010_x86_64.whl
+ 2960  pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.5.0-cp38-cp38-manylinux2010_x86_64.whl
+ 2961  conda activate tf2\n
+ 2962  python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+ 2963  python --version
+ 2964  python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+ 2965  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 2966  ls
+ 2967  cd Documents
+ 2968  cd gitWorkspace
+ 2969  cd ..
+ 2970  cd stylegan2-ada
+ 2971  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 2972  code ~/.zprofile
+ 2973  cd /usr/local/cuda-11.4
+ 2974  ls
+ 2975  cd bin
+ 2976  ls
+ 2977  nvcc
+ 2978  nvcc --version
+ 2979  g++ --version
+ 2980  nvcc
+ 2981  nvcc --versoin
+ 2982  nvcc --version
+ 2983  pwd
+ 2984  cd ~/
+ 2985  l
+ 2986  cd Documents
+ 2987  cdgi
+ 2988  cd gitWorkspace
+ 2989  l
+ 2990  cd ..
+ 2991  cd stylegan2-ada
+ 2992  l
+ 2993  pip install tf-nightly-gpu
+ 2994  pip uninstall tensorflow
+ 2995  pip install tf-nightly-gpu
+ 2996  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 2997  pip uninstall tf-nightly-gpu
+ 2998  pip install tf-nightly-gpu
+ 2999  pip uninstall keras-nightly
+ 3000  pip uninstall grpcio
+ 3001  pip install tf-nightly-gpu
+ 3002  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3003  pip freeze > requirements.txt
+ 3004  cat requirements.txt
+ 3005  docker
+ 3006  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3007  conda list --revisions
+ 3008  cd ~/Downloads
+ 3009  tar -xzvf cudnn-11.3-linux-x64-v8.2.1.32.tgz
+ 3010  l
+ 3011  conda activate tf2
+ 3012  cd ..
+ 3013  cd Documents
+ 3014  l
+ 3015  cd stylegan2-ada
+ 3016  l
+ 3017  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3018  sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+ 3019  cd ~/Downloads
+ 3020  sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+ 3021  sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+ 3022  cd ..
+ 3023  cd Documents
+ 3024  cd gitWorkspace
+ 3025  cd ..
+ 3026  cd stylegan2-ada
+ 3027  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3028  conda activate tf2
+ 3029  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3030  conda env list
+ 3031  conda activate tf-gpu
+ 3032  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3033  pip install moviepy
+ 3034  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3035  nvidia-smi
+ 3036  cat $/usr/local/cuda-11.2/lib64
+ 3037  cat $LD_LIBRARY_PATH
+ 3038  echo $LD_LIBRARY_PATH
+ 3039  conda activate tf-gpu
+ 3040  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3041  cd Documents
+ 3042  cd stylegan
+ 3043  cd stylegan2-ada
+ 3044  conda activate tf-gpu
+ 3045  ls
+ 3046  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3047  nvcc -V
+ 3048  conda activate tf2
+ 3049  nvcc -V
+ 3050  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3051  pip install --upgrade tensorflow
+ 3052  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3053  dpkg -l | grep cudnn
+ 3054  dpkg -l | grep cuda
+ 3055  nvidia-smi
+ 3056  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3057  cd /usr/local/cuda-11.2/lib64
+ 3058  cd /usr/local/
+ 3059  ls
+ 3060  cd cuda
+ 3061  ls
+ 3062  cd lib64
+ 3063  ls
+ 3064  pwd
+ 3065  cd ..
+ 3066  ls
+ 3067  cd ..
+ 3068  l
+ 3069  cd cuda-11.4
+ 3070  l
+ 3071  cd bin
+ 3072  ls
+ 3073  conda activate tf-gpu
+ 3074  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3075  echo $LD_LIBRARY_PATH
+ 3076  export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64;/usr/local/cuda-11.4/lib;/usr/local/cuda-11.4/lib64
+ 3077  export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64;/usr/local/cuda-11.4/lib64
+ 3078  cd ~/
+ 3079  cd Documents/stylegan2-ada
+ 3080  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3081  cd /usr/local/cuda
+ 3082  ls
+ 3083  cd lib64
+ 3084  cd ~/Documents
+ 3085  l
+ 3086  cd stylegan2-ada
+ 3087  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3088  conda search cudatoolkit
+ 3089  conda search cudnn
+ 3090  conda search --channel nvidia cudnn
+ 3091  conda search --channel nvidia cudatoolkit
+ 3092  conda deactivate
+ 3093  conda environment create --name nvidia-cuda
+ 3094  conda create --name nvidia-cuda
+ 3095  n
+ 3096  conda create --name nvidia-cuda python=3.8
+ 3097  conda activate nvidia-cuda
+ 3098  conda install --channel nvidia cudatoolkit cudnn
+ 3099  pip install tensorflow-gpu
+ 3100  pip3 --version
+ 3101  conda activate nvidia-gpu
+ 3102  conda activate nvidia-cuda
+ 3103  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3104  pip install moviepy
+ 3105  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3106  pip install opensimplex
+ 3107  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3108  cd /usr/local/cuda-11.2
+ 3109  cd ~/Downloads
+ 3110  l
+ 3111  tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
+ 3112  sh  cuda_11.2.0_460.27.04_linux.run 
+ 3113  sudo sh  cuda_11.2.0_460.27.04_linux.run 
+ 3114  conda activate nvidia-cuda
+ 3115  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3116  pip install scipy
+ 3117  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3118  pip install PIL
+ 3119  pip install -r requirements.txt
+ 3120  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3121  pip install image
+ 3122  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3123  pip install moviepy
+ 3124  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3125  pip install opensimplex
+ 3126  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3127  nvcc -V
+ 3128  pip install tf-nightly-gpu
+ 3129  pip uninstall tensorflow-gpu
+ 3130  pip install tf-nightly-gpu
+ 3131  history
+ 3132  conda search --channel anaconda cudatoolkit
+ 3133  conda search --channel nvidia cudatoolkit
+ 3134  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3135  pip freeze > requirements.txt
+ 3136  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3137  \nnvcc --std=c++11 -DNDEBUG --compiler-options '-fPIC' --compiler-options '-I/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow/include -D_GLIBCXX_USE_CXX11_ABI=0 -DEIGEN_MAX_ALIGN_BYTES=64' --linker-options '-L/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow -l:libtensorflow_framework.so.2' --gpu-architecture=sm_86 --use_fast_math --disable-warnings --include-path "/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow/include" --include-path "/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow/include/external/protobuf_archive/src" --include-path "/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow/include/external/com_google_absl" --include-path "/home/jp/miniconda3/envs/nvidia-cuda/lib/python3.8/site-packages/tensorflow/include/external/eigen_archive" 2>&1 "/home/jp/Documents/stylegan2-ada/dnnlib/tflib/ops/fused_bias_act.cu" --shared -o "/tmp/tmpwopaohni/fused_bias_act_tmp.so" --keep --keep-dir "/tmp/tmpwopaohni"
+ 3138  history
+ 3139  dpkg -l | grep -i nvidia
+ 3140  nvidia-smi
+ 3141  dpkg -l | grep nvidia-driver
+ 3142  dpkg -l | grep nvidia-
+ 3143  cd ~/Downloads
+ 3144  l
+ 3145  sudo sh  cuda_11.2.0_460.27.04_linux.run 
+ 3146  cat /var/log/cuda-installer.log
+ 3147  sudo apt-get purge nvidia-driver-470
+ 3148  dpkg -l | grep nvidia*
+ 3149  dpkg -l | grep nvidia
+ 3150  cd Documents
+ 3151  cd gitWorkspace
+ 3152  l
+ 3153  cd ..
+ 3154  cd stylegan2-ada
+ 3155  conda activate tf2
+ 3156  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3157  conda activate nvidia-cuda
+ 3158  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3159  code ~/.profile
+ 3160  conda activate nvidia-cuda
+ 3161  code ~/.zprofile
+ 3162  nvidia-smi
+ 3163  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3164  [200~lsb_release -a~
+ 3165  lsb_release -a
+ 3166  dpkg -l | grep cudnn
+ 3167  dpkg -l | grep cuda
+ 3168  pip show tf-nightly
+ 3169  sudo apt install apt-transport-https curl gnupg\ncurl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg\nsudo mv bazel.gpg /etc/apt/trusted.gpg.d/\necho "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+ 3170  sudo apt install bazel
+ 3171  sudo dpkg --configure -a
+ 3172  sudo apt install bazel
+ 3173  sudo apt install apt-transport-https curl gnupg\ncurl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg\nsudo mv bazel.gpg /etc/apt/trusted.gpg.d/\necho "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+ 3174  sudo apt install bazel
+ 3175  sudo ubuntu-drivers devices\n\n
+ 3176  sudo dpkg -P $(dpkg -l | grep nvidia-driver | awk '{print $2}')\n\n
+ 3177  sudo apt autoremove\n\n
+ 3178  sudo lshw -C display\n\n
+ 3179  sudo ubuntu-drivers devices\n\n
+ 3180  sudo ubuntu-drivers autoinstall\n\n
+ 3181  nvidia-smi
+ 3182  cd ..
+ 3183  cd Downloads
+ 3184  cd cuda
+ 3185  l
+ 3186  cd .
+ 3187  cd ..
+ 3188  sudo sh cuda_11.2.0_460.27.04_linux.run
+ 3189  cat /var/log/cuda-installer.log
+ 3190  nvidia-smi
+ 3191  sudo /usr/bin/nvidia-uninstall
+ 3192  cat /proc/driver/nvidia/version
+ 3193  cd Documents/gitWorkspace
+ 3194  cd ..
+ 3195  cd stylegan2-ada
+ 3196  conda activate tf2
+ 3197  ls
+ 3198  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3199  pip uninstall tensorflow
+ 3200  pip uninstall tensorflow-gpu
+ 3201  pip install tf-nightly
+ 3202  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3203  conda activate nvidia-cuda
+ 3204  pip install tf-nightly
+ 3205  pip uninstall tensorflow
+ 3206  pip uninstall tensorflow-gpu
+ 3207  pip uninstall tf-nightly
+ 3208  pip freeze 
+ 3209  pip uninstall tf-nightly-gpu
+ 3210  pip install tf-nightly
+ 3211  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3212  conda -c nvidia search cudnn
+ 3213  conda search -c nvidia  cudnn
+ 3214  conda search -c nvidia  cudnn cudatoolkit
+ 3215  conda search -c nvidia cudatoolkit
+ 3216  nvidia-smi
+ 3217  cd ..
+ 3218  cd gitWorkspace
+ 3219  git clone https://github.com/tensorflow/tensorflow.git
+ 3220  cd ..
+ 3221  cd stylegan2-ada
+ 3222  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3223  conda search -c nvidia tensorflow
+ 3224  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3225  nvcc -V
+ 3226  which nvcc
+ 3227  conda search nvidia
+ 3228  conda search cuda
+ 3229  conda search nvcc_linux
+ 3230  code ~/.zprofile
+ 3231  nvcc -V
+ 3232  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3233  echo $PATH
+ 3234  code ~/.zshrc
+ 3235  /usr/bin/
+ 3236  gcc
+ 3237  gcc --version
+ 3238  gcc-10 --version
+ 3239  conda activate nvidia-cuda
+ 3240  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3241  gcc-10 --version
+ 3242  sudo apt install build-essential
+ 3243  gcc --version
+ 3244  sudo apt install build-essential manpages-dev software-properties-common\nsudo add-apt-repository ppa:ubuntu-toolchain-r/test\nsudo apt update && sudo apt install gcc-11 g++-11
+ 3245  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-11 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-11  --slave /usr/bin/cpp cpp /usr/bin/cpp-11;\n
+ 3246  -+
+ 3247  sudo apt install gcc-11
+ 3248  sudo apt update
+ 3249  sudo apt install gcc-11
+ 3250  apt list --upgradable
+ 3251  sudo apt upgrade
+ 3252  sudo apt install gcc-11
+ 3253  deb http://mirrors.kernel.org/ubuntu hirsute main universe\nsudo apt-get update\nsudo apt-get install gcc-11
+ 3254  sudo add-apt-repository 'deb http://mirrors.kernel.org/ubuntu hirsute main universe'
+ 3255  sudo apt install gcc-11
+ 3256  sudo apt update
+ 3257  sudo apt install gcc-11
+ 3258  /local/$CUDAVER/bin:$PATH
+ 3259  export LD_LIBRARY_PATH=/usr/local/$CUDAVER/lib:$LD_LIBRARY_PATH
+ 3260  export LD_LIBRARY_PATH=/usr/local/$CUDAVER/lib64:$LD_LIBRARY_PATH
+ 3261  export CUDA_PATH=/usr/local/$CUDAVER
+ 3262  export CUDA_ROOT=/usr/local/$CUDAVER
+ 3263  export CUDA_HOME=/usr/local/$CUDAVER
+ 3264  gcc --version
+ 3265  sudo apt install gcc-11
+ 3266  conda activate nvidia-cuda
+ 3267  gcc --version
+ 3268  gcc-11
+ 3269  gcc --version;g++ --version;gcov --version;
+ 3270  sudo update-alternatives --config gcc
+ 3271  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-11 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-11  --slave /usr/bin/cpp cpp /usr/bin/cpp-11;\n
+ 3272  sudo apt update && sudo apt install gcc-11 g++-11\n
+ 3273  gcc --version;g++ --version;gcov --version;\n
+ 3274  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-11 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-11  --slave /usr/bin/cpp cpp /usr/bin/cpp-11;\n
+ 3275  sudo update-alternatives --config gcc\n
+ 3276  sudo update-alternatives --config g++\n
+ 3277  sudo update-alternatives --config cpp\n
+ 3278  g++ --version
+ 3279  update-alternatives --query gcc\n
+ 3280  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11
+ 3281  apt-get install g++-11
+ 3282  sudo apt-get install g++-11
+ 3283  update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 100\nupdate-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50\nupdate-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100\nupdate-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50\nupdate-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11 100\nupdate-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11 50
+ 3284  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 100\nsudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11 100\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11 50\nsudo update-alternatives --set g++ /usr/bin/g++-11\nsudo update-alternatives --set gcc /usr/bin/gcc-11\nsudo update-alternatives --set cpp-bin /usr/bin/cpp-11
+ 3285  nvcc -V
+ 3286  which gcc
+ 3287  gcc --version
+ 3288  cpp
+ 3289  cpp --version
+ 3290  conda activate nvidia-cuda
+ 3291  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3292  gcc --version
+ 3293  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3294  history
+ 3295  apt-get install g++-11.2\nupdate-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11.2 100\nupdate-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11.2 50\nupdate-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11.2 100\nupdate-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11.2 50\nupdate-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11.2 100\nupdate-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11.2 50\nupdate-alternatives --set g++ /usr/bin/g++-11.2\nupdate-alternatives --set gcc /usr/bin/gcc-11.2\nupdate-alternatives --set cpp-bin /usr/bin/cpp-11.2
+ 3296  sudo apt-get install g++-11.2
+ 3297  sudo apt-get install g++-11.2\nsudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11.2 100\nsudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11.2 50\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11.2 100\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11.2 50\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11.2 100\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-11.2 50\nsudo update-alternatives --set g++ /usr/bin/g++-11.2\nsudo update-alternatives --set gcc /usr/bin/gcc-11.2\nsudo update-alternatives --set cpp-bin /usr/bin/cpp-11.2
+ 3298  gcc --version
+ 3299  sudo apt-get update
+ 3300  gcc --version
+ 3301  sudo apt-get install g++-10.2\nsudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10.2 100\nsudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10.2 50\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10.2 100\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10.2 50\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-10.2 100\nsudo update-alternatives --install /usr/bin/cpp cpp-bin /usr/bin/cpp-10.2 50\nsudo update-alternatives --set g++ /usr/bin/g++-10.2\nsudo update-alternatives --set gcc /usr/bin/gcc-10.2\nsudo update-alternatives --set cpp-bin /usr/bin/cpp-10.2
+ 3302  sudo apt install gcc-10.2 g++-10.2\n
+ 3303  sudo apt install gcc-10.1 g++-10.1
+ 3304  apt-cache search gcc | grep gcc
+ 3305  gcc –version\n
+ 3306  gcc --version
+ 3307  sudo apt install gcc-9
+ 3308  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+ 3309  sudo apt install gcc-9 g++-9
+ 3310  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100\nsudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
+ 3311  gcc --version
+ 3312  export CUDA_HOST_COMPILER=/usr/bin/gcc-9
+ 3313  gcc --version
+ 3314  gcc
+ 3315  gcc --version
+ 3316  gcc-9
+ 3317  gcc-9 --version
+ 3318  sudo apt install gcc-10.4 g++-10.4
+ 3319  sudo update-alternatives --set gcc /usr/bin/gcc-9
+ 3320  gcc --version
+ 3321  conda activate nvidia-cuda
+ 3322  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3323  conda deactivate
+ 3324  conda activate tf2
+ 3325  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3326  gcc --version
+ 3327  echo $CUDA_HOST_COMPILER
+ 3328  /usr/local/cuda/bin/gcc
+ 3329  sudo ln -s /usr/bin/gcc-9 /usr/local/cuda/bin/gcc
+ 3330  sudo cp /usr/bin/gcc-9 /usr/local/cuda/bin/gcc
+ 3331  cd /usr/local/cuda/bin
+ 3332  cd /usr/local/cuda
+ 3333  ls
+ 3334  mkdir bin
+ 3335  sudo mkdir bin
+ 3336  cd ..
+ 3337  cd ~/Documents/stylegan
+ 3338  cd ~/Documents/stylegan2-ada
+ 3339  gcc --version
+ 3340  sudo update-alternatives --set g++ /usr/bin/g++-10\nsudo update-alternatives --set gcc /usr/bin/gcc-10\nsudo update-alternatives --set cpp-bin /usr/bin/cpp-10
+ 3341  gcc --version
+ 3342  sudo ln -s /usr/bin/gcc-4.4 /usr/local/cuda/bin/gcc
+ 3343  sudo ln -s /usr/bin/gcc-9 /usr/local/cuda/bin/gcc
+ 3344  sudo rm /usr/local/cuda/bin/gcc
+ 3345  sudo ln -s /usr/bin/gcc-9 /usr/local/cuda/bin/gcc
+ 3346  sudo update-alternatives --set g++ /usr/bin/g++-10\nsudo update-alternatives --set gcc /usr/bin/gcc-10\nsudo update-alternatives --set cpp-bin /usr/bin/cpp-10
+ 3347  sudo update-alternatives --set g++ /usr/bin/g++-10\nsudo update-alternatives --set gcc /usr/bin/gcc-10
+ 3348  gcc-10
+ 3349  gcc-10 --version
+ 3350  sudo update-alternatives --set gcc /usr/bin/gcc-10\n
+ 3351  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100
+ 3352  sudo update-alternatives --set gcc /usr/bin/gcc-10\n
+ 3353  gcc-10 --version
+ 3354  gcc --version
+ 3355  python generate.py generate-images   --seeds=85,265,297,849  --outdir=out  \\n    --network=./1.pkl
+ 3356  nvidia-smi
+ 3357  atp-get search cuda
+ 3358  apt-get search cuda
+ 3359  conda remove nvidia-cuda
+ 3360  conda remove env nvidia-cuda
+ 3361  conda env remove nvidia-cuda
+ 3362  conda env remove --name nvidia-cuda
+ 3363  timeshift
+ 3364  timeshift --create --comments "cudatoolkit 11.4 + gcc9" 
+ 3365  sudo timeshift --create --comments "cudatoolkit 11.4 + gcc9" 
+ 3366  nvcc --version
+ 3367  cat /etc/profile.d/cuda.sh
+ 3368  ls
+ 3369  conda activate tf2
+ 3370  ls
+ 3371  cd Documents
+ 3372  l
+ 3373  cd stylegan2-ada
+ 3374  cd ..
+ 3375  git clone https://github.com/eladrich/pixel2style2pixel.git\ncd pixel2style2pixel
+ 3376  l
+ 3377  cd environment
+ 3378  l
+ 3379  cd ..
+ 3380  code .
+ 3381  conda activate pytorch
+ 3382  conda activate torch
+ 3383  pip install git+https://github.com/openai/CLIP.git\n
+ 3384  ls
+ 3385  cd Documents
+ 3386  git clone https://github.com/xmu-xiaoma666/External-Attention-pytorch.git
+ 3387  cd l
+ 3388  l
+ 3389  rm -rf External-Attention-pytorch
+ 3390  cd gitWorkspace
+ 3391  git clone https://github.com/xmu-xiaoma666/External-Attention-pytorch.git
+ 3392  cd External-Attention-pytorch
+ 3393  l
+ 3394  conda activate torch
+ 3395  python main.py
+ 3396  code .
+ 3397  sudo code /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
+ 3398  cd /etc/polkit-1/localauthority.conf.d/
+ 3399  code .
+ 3400  cd ~/Desktop
+ 3401  ls
+ 3402  cdOLD
+ 3403  cd OLD
+ 3404  sudo mv 02-allow-colord.conf /etc/polkit-1/localauthority.conf.d/
+ 3405  ls
+ 3406  cd Documents/gitWorkspace
+ 3407  git clone git@github.com:johndpope/FaceShifter_SmoothCrop.git
+ 3408  git clone https://github.com/mindslab-ai/faceshifter.git
+ 3409  cd faceshifter
+ 3410  l
+ 3411  docker build . --tag faceshifter
+ 3412  code .
+ 3413  docker build . --tag faceshifter
+ 3414  d ..
+ 3415  cd ..
+ 3416  git clone https://github.com/neuralchen/SimSwap.git
+ 3417  cd SimSwap
+ 3418  conda activate torch
+ 3419  cd SimSwap
+ 3420  cd /insightface_func/models
+ 3421  ls
+ 3422  cd insightface_func
+ 3423  mkdir models
+ 3424  nautilus
+ 3425  nautilus . 
+ 3426  d ..
+ 3427  cd ..
+ 3428  ls
+ 3429  cd ..
+ 3430  ls
+ 3431  cd SimSwap
+ 3432  l
+ 3433  code .
+ 3434  cd insightface_func
+ 3435  cd models
+ 3436  tar -xzvf arcface_checkpoint.tar
+ 3437  python 
+ 3438  cd ...
+ 3439  cd ..
+ 3440  cd fsgan
+ 3441  conda activate torch
+ 3442  pip install gdown
+ 3443  python
+ 3444  l
+ 3445  rm 1.tar
+ 3446  python
+ 3447  cd ..
+ 3448  c d..
+ 3449  cd ..
+ 3450  cd Downloads
+ 3451  sudo apt-get install unzip\n
+ 3452  ls
+ 3453  tar zxvf arcface_checkpoint.tar ./arcface_model
+ 3454  unrar zxvf arcface_checkpoint.tar ./arcface_model
+ 3455  unrar arcface_checkpoint.tar ./arcface_model
+ 3456  unrar x arcface_checkpoint.tar ./arcface_model
+ 3457  wget -P ./arcface_model https://github.com/neuralchen/SimSwap/releases/download/1.0/arcface_checkpoint.tar
+ 3458  python test_one_image.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/6.jpg --pic_b_path crop_224/ds.jpg --output_path output/\n
+ 3459  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path ./demo_file/Iron_man.jpg --video_path ./demo_file/multi_people_1080p.mp4 --output_path ./output/multi_test_swapsingle.mp4 --temp_path ./temp_results\n
+ 3460  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path ARNOLD_571_855.jpg --video_path J11-wm.mp4 --output_path ./output/multi_test_swapsingle.mp4 --temp_path ./temp_results\n
+ 3461  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path ARNOLD_571_855.jpg --video_path J11-wm.mp4 --output_path ./output/arnie.mp4 --temp_path ./temp_results\n
+ 3462  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path Jerry-Seinfeld-2019.jpg --video_path Fady2-wm.mp4 --output_path ./output/jerry.mp4 --temp_path ./temp_results\n
+ 3463  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path images.jpg --video_path Fady2-wm.mp4 --output_path ./output/jerry1.mp4 --temp_path ./temp_results\n
+ 3464  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path A-558436-1478198229-3737.jpg --video_path Fady2-wm.mp4 --output_path ./output/jerry1.mp4 --temp_path ./temp_results\n
+ 3465  python test_video_swapsingle.py --isTrain false  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path gettyimages-596299630.jpg --video_path C11-wm.mp4 --output_path ./output/gene.mp4 --temp_path ./temp_results\n
+ 3466  ]
+ 3467  code ~/.zprofile
+ 3468  code ~/.zshrc
+ 3469  cd Documents/gitWorkspace
+ 3470  l
+ 3471  git clone https://github.com/yuval-alaluf/restyle-encoder.git
+ 3472  cd restyle-encoder
+ 3473  l
+ 3474  nautilus .
+ 3475  cd environment
+ 3476  l
+ 3477  cat restyle_env.yaml
+ 3478  cd ..
+ 3479  python scripts/train_restyle_e4e.py \\n--dataset_type ffhq_encode \\n--encoder_type ProgressiveBackboneEncoder \\n--exp_dir=experiment/restyle_e4e_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--delta_norm_lambda 0.0002 \\n--id_lambda 0.1 \\n--use_w_pool \\n--w_discriminator_lambda 0.1 \\n--progressive_start 20000 \\n--progressive_step_every 2000 \\n--input_nc 6 \\n--n_iters_per_batch=5 \\n--output_size 1024 \\n
+ 3480  python scripts/train_restyle_e4e.py \\n--dataset_type ffhq_encode \\n--encoder_type ProgressiveBackboneEncoder \\n--exp_dir=experiment/restyle_e4e_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--delta_norm_lambda 0.0002 \\n--id_lambda 0.1 \\n--use_w_pool \\n--w_discriminator_lambda 0.1 \\n--progressive_start 20000 \\n--progressive_step_every 2000 \\n--input_nc 6 \\n--n_iters_per_batch=5 \\n--output_size 1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3481  pip install tensorboard
+ 3482  python scripts/train_restyle_e4e.py \\n--dataset_type ffhq_encode \\n--encoder_type ProgressiveBackboneEncoder \\n--exp_dir=experiment/restyle_e4e_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--delta_norm_lambda 0.0002 \\n--id_lambda 0.1 \\n--use_w_pool \\n--w_discriminator_lambda 0.1 \\n--progressive_start 20000 \\n--progressive_step_every 2000 \\n--input_nc 6 \\n--n_iters_per_batch=5 \\n--output_size 1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3483  nvidia-smi
+ 3484  prime-select query
+ 3485  gcc
+ 3486  gcc --version
+ 3487  conda deactivate
+ 3488  nvidia-smi
+ 3489  \tsudo sh '/home/jp/Downloads/scratch/selfgz13755/builds/NVIDIA-Linux-x86_64-470.42.01.run' 
+ 3490  /etc/polkit-1/localauthority.conf.d/
+ 3491  l
+ 3492  nautilus .
+ 3493  chown root 02-allow-colord.conf
+ 3494  sudo chown root 02-allow-colord.conf
+ 3495  mv 02-allow-colord.conf ~/Desktop
+ 3496  sudo mv 02-allow-colord.conf ~/Desktop
+ 3497  mv ~/Desktop/02-allow-colord.conf .
+ 3498  sudo mv ~/Desktop/02-allow-colord.conf .
+ 3499  sudo systemctl restart polkit.service
+ 3500  sudo mv ~/Desktop/02-allow-colord.conf .
+ 3501  sudo mv 02-allow-colord.conf ~/Desktop
+ 3502  sudo systemctl restart polkit.service
+ 3503  nvidia-smi
+ 3504  nv
+ 3505  nvidia-smi
+ 3506  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 3507  sudo apt purge nvidia-driver-465
+ 3508  sudo apt purge nvidia-driver-465 -y
+ 3509  sudo apt autoremove -y
+ 3510  sudo apt autoclean
+ 3511  nvidia-smi
+ 3512  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 3513  nvidia-smi
+ 3514  cat /var/log/cuda-installer.log
+ 3515  sudo sh '/home/jp/cuda_11.4.0_470.42.01_linux.run' 
+ 3516  nvidia-smi
+ 3517  cd Documents
+ 3518  l
+ 3519  cd gitWorkspace
+ 3520  ls
+ 3521  cd restyle-encoder
+ 3522  l
+ 3523  code .
+ 3524  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3525  cd ..
+ 3526  nvcc
+ 3527  cd restyle-encoder
+ 3528  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3529  which nvcc
+ 3530  sudo cp /usr/bin/nvcc /usr/local/cuda-11.4/bin
+ 3531  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3532  sudo rm /usr/local/cuda-11.4/bin/nvcc
+ 3533  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3534  code .
+ 3535  code ~/.zprofile
+ 3536  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3537  code ~/.bashrc
+ 3538  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3539  cd /usr/local/cuda-11.4/bin/
+ 3540  l
+ 3541  python scripts/train_restyle_psp.py \\n--dataset_type=ffhq_encode \\n--encoder_type=BackboneEncoder \\n--exp_dir=experiment/restyle_psp_ffhq_encode \\n--workers=8 \\n--batch_size=8 \\n--test_batch_size=8 \\n--test_workers=8 \\n--val_interval=5000 \\n--save_interval=10000 \\n--start_from_latent_avg \\n--lpips_lambda=0.8 \\n--l2_lambda=1 \\n--w_norm_lambda=0 \\n--id_lambda=0.1 \\n--input_nc=6 \\n--n_iters_per_batch=5 \\n--output_size=1024 \\n--stylegan_weights=pretrained_models/stylegan2-ffhq-config-f.pt
+ 3542  which nvcc
+ 3543  nvcc -V
+ 3544  rm nvcc
+ 3545  which nvcc
+ 3546  mv /usr/bin/nvcc /usr/bin/nvcc2
+ 3547  sudo mv /usr/bin/nvcc /usr/bin/nvcc2
+ 3548  which nvcc
+ 3549  cd ~/Downloads
+ 3550  l
+ 3551  sudo sh cuda_11.4.0_470.42.01_linux.run
+ 3552  sudo sh cuda_11.4.0_470.42.01_linux.run.st
+ 3553  sudo sh cuda_11.4.0_470.42.01_linux.run
+ 3554  nvcc
+ 3555  sudo sh cuda_11.4.0_470.42.01_linux.run
+ 3556  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' 
+ 3557  cd /tmp
+ 3558  ls
+ 3559  rm *
+ 3560  cd ~/Downloads
+ 3561  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' 
+ 3562  cd /tmp
+ 3563  rm -rf *.*
+ 3564  sudo rm -rf *.*
+ 3565  cd ~/Downloads
+ 3566  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' 
+ 3567  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' --help
+ 3568  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' --tmpdir=./temp
+ 3569  sudo mkdir ./temp
+ 3570  sudo sh '/home/jp/Downloads/cuda_11.4.0_470.42.01_linux.run' --tmpdir=./temp
+ 3571  nvidia-smi
+ 3572  exit
+ 3573  l
+ 3574  cd Documents/gitWorkspace
+ 3575  l
+ 3576  code ~/.zprofile
+ 3577  code ~/.zshrc
+ 3578  l
+ 3579  git clone git@github.com:johndpope/FacialRetargeting-1.git
+ 3580  cd FacialRetargeting-1
+ 3581  l
+ 3582  sudo apt-get install ctmviewer
+ 3583  sudo apt-get install g3dviewer
+ 3584  ls
+ 3585  cd Mery_human_transfer
+ 3586  l
+ 3587  cd data
+ 3588  l
+ 3589  cd mery
+ 3590  l
+ 3591  g3dviewer mery_neutral.obj
+ 3592  l
+ 3593  cd ..
+ 3594  l
+ 3595  cd ..
+ 3596  l
+ 3597  conda env list
+ 3598  conda activate tf1-nv
+ 3599  python main.py
+ 3600  pip install openmesh
+ 3601  python main.py
+ 3602  conda install -c conda-forge igl
+ 3603  python main.py
+ 3604  l
+ 3605  cd ..
+ 3606  cd ./Mery_human_transfer/src/; mkdir build; cd build; cmake ..; make -j4;
+ 3607  ls
+ 3608  cd ..
+ 3609  l
+ 3610  cd ..
+ 3611  ls
+ 3612  cd .
+ 3613  cd ..
+ 3614  ls
+ 3615  cd libigl; mkdir build; cmake ..; make python -j4;
+ 3616  ls
+ 3617  cmake ..
+ 3618  make python -j4
+ 3619  ls
+ 3620  cd python
+ 3621  l
+ 3622  cd ..
+ 3623  ls
+ 3624  make
+ 3625  make.
+ 3626  cmake ..
+ 3627  cmake .
+ 3628  l
+ 3629  cd ..
+ 3630  l
+ 3631  cd Chubby_human_transfer
+ 3632  l
+ 3633  python main.py
+ 3634  l
+ 3635  cd ..
+ 3636  ls
+ 3637  cd libigl
+ 3638  l
+ 3639  cd buil
+ 3640  cd build
+ 3641  l
+ 3642  cmake ..
+ 3643  ls
+ 3644  cd ..
+ 3645  l
+ 3646  make -j4
+ 3647  l
+ 3648  cat Makefile
+ 3649  code .
+ 3650  cd ..
+ 3651  ./RIMD_Reconstruct
+ 3652  l
+ 3653  make .
+ 3654  make
+ 3655  cmake 
+ 3656  cmake.
+ 3657  cmake .
+ 3658  cd ..
+ 3659  l
+ 3660  cd libigl
+ 3661  make python -j4
+ 3662  l
+ 3663  cd build
+ 3664  make python -j4
+ 3665  cd ..
+ 3666  l
+ 3667  cd ..
+ 3668  l
+ 3669  cd RIMD_Reconstruct
+ 3670  l
+ 3671  pip install pyigl
+ 3672  l
+ 3673  nautilus .
+ 3674  sudo apt-get install qt
+ 3675  sudo apt-get install qt6
+ 3676  sudo apt-get install qt6-default
+ 3677  sudo apt-get install qt5-default
+ 3678  conda activate torch
+ 3679  pip install lpips wandb 
+ 3680  ls
+ 3681  cd ..
+ 3682  l
+ 3683  cd ..
+ 3684  git clone https://github.com/danielroich/PTI.git
+ 3685  cd PTI
+ 3686  l
+ 3687  nautilus .
+ 3688  code .
+ 3689  cd ..
+ 3690  find . - name  ffhq.pkl
+ 3691  cd ..
+ 3692  l
+ 3693  find . - name  ffhq.pkl
+ 3694  find . - name *.pkl
+ 3695  find / - name *.pkl
+ 3696  find /-name *.pkl
+ 3697  find / -name *.pkl
+ 3698  find / -name "*.pkl"
+ 3699  find . -name "*.pkl"
+ 3700  cd Documents/gitWorkspace
+ 3701  find . -name "*.pkl"
+ 3702  ls ./.cache/dnnlib/downloads/99c1176b7c089e02f14a7cfaa2448af3_https___nvlabs-fi-cdn.nvidia.com_stylegan2-ada_pretrained_ffhq.pkl\n
+ 3703  cat ./.cache/dnnlib/downloads/99c1176b7c089e02f14a7cfaa2448af3_https___nvlabs-fi-cdn.nvidia.com_stylegan2-ada_pretrained_ffhq.pkl\n
+ 3704  pip install wandb -qqq\nimport wandb\nwandb.login()\nq
+ 3705  `\n`
+ 3706  python 
+ 3707  cd PTI
+ 3708  l
+ 3709  cd ..
+ 3710  l
+ 3711  cd ..
+ 3712  cd Downloads
+ 3713  l
+ 3714  mv e4e_ffhq_encode.pt ../Documents/gitWorkspace/PTI/models
+ 3715  mv shape_predictor_68_face_landmarks.dat ../Documents/gitWorkspace/PTI/models
+ 3716  ls
+ 3717  cd ..
+ 3718  l
+ 3719  cd Documents/gitWorkspace
+ 3720  l
+ 3721  cd PTI
+ 3722  l
+ 3723  \twang
+ 3724  cp ./Documents/gitWorkspace/FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl\n ./models
+ 3725  l
+ 3726  mv ../../Documents/gitWorkspace/FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl\n ./models
+ 3727  mv ../../Documents/gitWorkspace/FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl\n .
+ 3728  mv ../../Documents/gitWorkspace/FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl .\n .
+ 3729  cd ..
+ 3730  cd Documents/gitWorkspace
+ 3731  cp FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl /PTI/models
+ 3732  cp ./FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl /PTI/models
+ 3733  cp ./FaceHack/face_gan/networks/generator_wanghong-stylegan2-config-f.pkl ./PTI/models
+ 3734  cd PTI 
+ 3735  cd models
+ 3736  l
+ 3737  pip install ftfy regex tqdm gdown
+ 3738  cd ..
+ 3739  ls
+ 3740  python scripts/run_pti.py
+ 3741  s
+ 3742  ls
+ 3743  cd utils
+ 3744  ls
+ 3745  python download_pretrained.py
+ 3746  cd ..
+ 3747  l
+ 3748  ls
+ 3749  cd utils
+ 3750  l
+ 3751  cd ..
+ 3752  mkdir pretrained_models 
+ 3753  mv utils/download_pretrained.py pretrained_models
+ 3754  cd pretrained_models
+ 3755  python download_pretrained.py
+ 3756  ls
+ 3757  l
+ 3758  wget https://www.dropbox.com/s/kzo52d9neybjxsb/model_ir_se50.pth\?dl\=0 -O model_ir_se50.pth
+ 3759  cd ..
+ 3760  mkdir aligned
+ 3761  cd ..
+ 3762  find . -name "aligned"
+ 3763  cd ./DeepFaceLab_Linux/workspace/data_dst/aligned\n
+ 3764  s
+ 3765  ls
+ 3766  cd ./DeepFaceLab_Linux/workspace/data_src/aligned\n
+ 3767  ls
+ 3768  ./DeepFaceLab_Linux/workspace/data_src/aligned\n
+ 3769  l
+ 3770  s
+ 3771  ls
+ 3772  cd ./stylegan2/aligned\n
+ 3773  cd ..
+ 3774  ./stylegan2/aligned\n
+ 3775  ls
+ 3776  cd ..
+ 3777  ./maskbackend/aligned\n
+ 3778  ls
+ 3779  cp *.* ../../PTI/aligned
+ 3780  cd ..
+ 3781  cd PTI
+ 3782  l
+ 3783  python scripts/run_pti.py
+ 3784  cat ../pretrained_models/generator_wanghong-stylegan2-config-f.pkl
+ 3785  python scripts/run_pti.py
+ 3786  source /home/jp/miniconda3/bin/activate
+ 3787  conda activate fsgan
+ 3788  conda activate torch
+ 3789  cd pretrained_models
+ 3790  wget https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
+ 3791  cd ..
+ 3792  python scripts/run_pti.py
+ 3793  nvcc -V
+ 3794  cd usr/local/
+ 3795  ls
+ 3796  cd /usr/local/cuda-11.4
+ 3797  ls
+ 3798  cd bin
+ 3799  ls
+ 3800  cd ..
+ 3801  l
+ 3802  cd ..
+ 3803  ls
+ 3804  cd cuda
+ 3805  ls
+ 3806  cd bin
+ 3807  ls
+ 3808  history
+ 3809  code history
+ 3810  history > history.txt
+ 3811  cd /
+ 3812  ls
+ 3813  cd home
+ 3814  ls
+ 3815  cd jp
+ 3816  history > history.txt
+ 3817  code history.txt
+ 3818  nvcc
+ 3819  cd /usr/local/cuda-11.4
+ 3820  l
+ 3821  cd bin
+ 3822  ls
+ 3823  cd ..
+ 3824  cd tools
+ 3825  ls
+ 3826  cd ..
+ 3827  ls
+ 3828  cd ..
+ 3829  cd cuda
+ 3830  l
+ 3831  cd bin
+ 3832  l
+ 3833  cd inclu
+ 3834  cd ..
+ 3835  ls
+ 3836  cd lib64
+ 3837  ls
+ 3838  cd /
+ 3839  find . -name "nvcc"
+ 3840  sudo find . -name "nvcc"
+ 3841  /usr/lib/nvidia-cuda-toolkit/bin/nvcc
+ 3842  /usr/lib/nvidia-cuda-toolkit/bin/nvcc -V
+ 3843  code ~/.zshrc
+ 3844  code ~/.zprofile
+ 3845  ls
+ 3846  cd /home
+ 3847  ls
+ 3848  cd jp
+ 3849  l
+ 3850  cd Downloads
+ 3851  ls
+ 3852  cd ..
+ 3853  l
+ 3854  cd NVIDIA_CUDA-11.4_Samples
+ 3855  ls
+ 3856  cd ..
+ 3857  ls
+ 3858  cd Downloads
+ 3859  l
+ 3860  sudo sh ./cuda_11.4.0_470.42.01_linux.run
+ 3861  cd tmp
+ 3862  ls
+ 3863  cd /tmp
+ 3864  ls
+ 3865  rm -rf *.*
+ 3866  sudo rm -rf *.*
+ 3867  cd /home/jp
+ 3868  cd Downloads
+ 3869  sudo sh ./cuda_11.4.0_470.42.01_linux.run
+ 3870  sudo sh ./cuda_11.4.0_470.42.01_linux.run --override
+ 3871  df -h total
+ 3872  df
+ 3873  df -h --total
+ 3874  sudo apt install gnome-tweaks 
+ 3875  ^[[200~/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
+ 3876  /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"\n
+ 3877  nvcc -V
+ 3878  cd Downloads
+ 3879  sudo sh cuda_11.4.0_470.42.01_linux.run
+ 3880  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin\nsudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600\nsudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub\nsudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"\nsudo apt-get update\nsudo apt-get -y install cuda
+ 3881  nvcc
+ 3882  nvcc -V
+ 3883  gcc -v
+ 3884  cd ..
+ 3885  nvcc -V
+ 3886  ls
+ 3887  cd Documents
+ 3888  l
+ 3889  cd gitWorkspace
+ 3890  l
+ 3891  cd PTI
+ 3892  l
+ 3893  python scripts/run_pti.py
+ 3894  nvidia-smi
+ 3895  sudo apt-get -y install cuda
+ 3896  nvidia-smi
+ 3897  sudo apt-mark hold System76-nvidia-driver
+ 3898  sudo system76-power graphics
+ 3899  sudo system76-power graphics nvidia
+ 3900  nvidia-smi
+ 3901  systemctl list-unit-files 
+ 3902* systemctl disable "pop-upgrade.service"
+ 3903  systemctl list-unit-files 
+ 3904  ls
+ 3905  cd Documents
+ 3906  ls
+ 3907  cd gitWorkspace
+ 3908  l
+ 3909  cd PTI
+ 3910  l
+ 3911  python scripts/run_pti.py 
