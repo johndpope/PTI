@@ -9,3 +9,12 @@ shape_pred*.*
 *.mp4
 DELETE
 StyleCLIP_results
+pretrained_models/
+# image_original/
+image_processed/
+__pycache__/
+embeddings/
+results/
+checkpoints/
+
+
