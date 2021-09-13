@@ -26,9 +26,6 @@ os.makedirs(save_path, exist_ok=True)
 
 image_dir_name = 'images'
 
-## If set to true download desired image from given url. If set to False, assumes you have uploaded personal image to
-## 'image_original' dir
-use_image_online = True
 image_name = '1' # put .jpg file in images_original NOT image_original folder
 use_multi_id_training = False
 global_config.device = 'cuda'
@@ -99,9 +96,6 @@ def export_updated_pickle(new_G,model_id):
   tmp = {}
   tmp['G_ema'] = old_G_ema # copy.deepcopy(new_G).eval().requires_grad_(False).cpu()
   print(f"old_G_ema:",old_G_ema)
-  for k, v in old_G_ema.items():
-    print("k:",k)
-    print("v:",v)
 
   tmp['G'] = new_G.eval().requires_grad_(False).cpu() # copy.deepcopy(new_G).eval().requires_grad_(False).cpu()
   tmp['D'] = old_D
@@ -200,18 +194,18 @@ from scripts.pti_styleclip import styleclip_edit
 
 paths_config.checkpoints_dir = '/home/jp/Documents/gitWorkspace/PTI'
 os.chdir('/home/jp/Documents/gitWorkspace/PTI')
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['afro'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['bobcut'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['bowlcut'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['mohawk'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['angry'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['angry'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['afro'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['bobcut'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['bowlcut'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['mohawk'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['angry'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['angry'], use_wandb=False)
 
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['depp'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['purple_hair'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['surprised'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['talor_swift'], use_wandb=False)
-# styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['trump'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['depp'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['purple_hair'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['surprised'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['talor_swift'], use_wandb=False)
+styleclip_edit(use_multi_id_G=use_multi_id_training, run_id=model_id, edit_types = ['trump'], use_wandb=False)
 
 original_styleCLIP_path = f'/home/jp/Documents/gitWorkspace/PTI/StyleCLIP_results/{image_dir_name}/{image_name}/e4e/{image_name}_afro.jpg'
 new_styleCLIP_path  = f'/home/jp/Documents/gitWorkspace/PTI/StyleCLIP_results/{image_dir_name}/{image_name}/PTI/{image_name}_afro.jpg'
@@ -240,11 +234,11 @@ from scripts.latent_creators import sg2_latent_creator
 from scripts.latent_creators import sg2_plus_latent_creator
 
 
-# e4e_latent_creator = e4e_latent_creator.E4ELatentCreator()
-# e4e_latent_creator.create_latents()
-# print("INFO:sg2_latent_creator")
-# sg2_latent_creator = sg2_latent_creator.SG2LatentCreator(projection_steps = 600)
-# sg2_latent_creator.create_latents()
+e4e_latent_creator = e4e_latent_creator.E4ELatentCreator()
+e4e_latent_creator.create_latents()
+print("INFO:sg2_latent_creator")
+sg2_latent_creator = sg2_latent_creator.SG2LatentCreator(projection_steps = 600)
+sg2_latent_creator.create_latents()
 
 print("INFO:sg2_plus_latent_creator")
 sg2_plus_latent_creator = sg2_plus_latent_creator.SG2PlusLatentCreator(projection_steps = 1200)
