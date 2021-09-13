@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 import wandb
-from criteria.losses import l2_loss
+from criteria import l2_loss
 from configs import hyperparameters
 from configs import global_config
 
@@ -38,7 +38,7 @@ class Space_Regulizer:
                 old_img = self.original_G.synthesis(w_code, noise_mode='none', force_fp32=True)
 
             if hyperparameters.regulizer_l2_lambda > 0:
-                l2_loss_val = l2_loss(old_img, new_img)
+                l2_loss_val = l2_loss.l2_loss(old_img, new_img)
                 if use_wandb:
                     wandb.log({f'space_regulizer_l2_loss_val': l2_loss_val.detach().cpu()},
                               step=global_config.training_step)

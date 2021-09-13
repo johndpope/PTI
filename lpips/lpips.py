@@ -3,9 +3,12 @@ from __future__ import absolute_import
 
 import torch
 import torch.nn as nn
+import torch.nn.init as init
 from torch.autograd import Variable
+import numpy as np
 from . import pretrained_networks as pn
 import torch.nn
+
 import lpips
 
 def spatial_average(in_tens, keepdim=True):
@@ -19,7 +22,7 @@ def upsample(in_tens, out_HW=(64,64)): # assumes scale factor is same for H and 
 
 # Learned perceptual metric
 class LPIPS(nn.Module):
-    def __init__(self, pretrained=True, net='vgg', version='0.1', lpips=True, lpips_layers=[0, 1, 2, 3, 4], spatial=False, 
+    def __init__(self, pretrained=True, net='alex', version='0.1', lpips=True, spatial=False, 
         pnet_rand=False, pnet_tune=False, use_dropout=True, model_path=None, eval_mode=True, verbose=True):
         # lpips - [True] means with linear calibration on top of base network
         # pretrained - [True] means load linear weights
@@ -29,16 +32,24 @@ class LPIPS(nn.Module):
             print('Setting up [%s] perceptual loss: trunk [%s], v[%s], spatial [%s]'%
                 ('LPIPS' if lpips else 'baseline', net, version, 'on' if spatial else 'off'))
 
+        self.pnet_type = net
         self.pnet_tune = pnet_tune
         self.pnet_rand = pnet_rand
         self.spatial = spatial
         self.lpips = lpips # false means baseline of just averaging all layers
         self.version = version
         self.scaling_layer = ScalingLayer()
-        self.L = lpips_layers
 
-        net_type = pn.vgg16
-        self.chns = [64,128,256,512,512]
+        if(self.pnet_type in ['vgg','vgg16']):
+            net_type = pn.vgg16
+            self.chns = [64,128,256,512,512]
+        elif(self.pnet_type=='alex'):
+            net_type = pn.alexnet
+            self.chns = [64,192,384,256,256]
+        elif(self.pnet_type=='squeeze'):
+            net_type = pn.squeezenet
+            self.chns = [64,128,256,384,384,512,512]
+        self.L = len(self.chns)
 
         self.net = net_type(pretrained=not self.pnet_rand, requires_grad=self.pnet_tune)
 
@@ -49,6 +60,10 @@ class LPIPS(nn.Module):
             self.lin3 = NetLinLayer(self.chns[3], use_dropout=use_dropout)
             self.lin4 = NetLinLayer(self.chns[4], use_dropout=use_dropout)
             self.lins = [self.lin0,self.lin1,self.lin2,self.lin3,self.lin4]
+            if(self.pnet_type=='squeeze'): # 7 layers for squeezenet
+                self.lin5 = NetLinLayer(self.chns[5], use_dropout=use_dropout)
+                self.lin6 = NetLinLayer(self.chns[6], use_dropout=use_dropout)
+                self.lins+=[self.lin5,self.lin6]
             self.lins = nn.ModuleList(self.lins)
 
             if(pretrained):
@@ -74,23 +89,23 @@ class LPIPS(nn.Module):
         outs0, outs1 = self.net.forward(in0_input), self.net.forward(in1_input)
         feats0, feats1, diffs = {}, {}, {}
 
-        for kk in self.L:
+        for kk in range(self.L):
             feats0[kk], feats1[kk] = lpips.normalize_tensor(outs0[kk]), lpips.normalize_tensor(outs1[kk])
             diffs[kk] = (feats0[kk]-feats1[kk])**2
 
         if(self.lpips):
             if(self.spatial):
-                res = [upsample(self.lins[kk].model(diffs[kk]), out_HW=in0.shape[2:]) for kk in self.L]  # HYUNG-KWON KO ADDED
+                res = [upsample(self.lins[kk].model(diffs[kk]), out_HW=in0.shape[2:]) for kk in range(self.L)]
             else:
-                res = [spatial_average(self.lins[kk].model(diffs[kk]), keepdim=True) for kk in self.L]  # HYUNG-KWON KO ADDED
+                res = [spatial_average(self.lins[kk].model(diffs[kk]), keepdim=True) for kk in range(self.L)]
         else:
             if(self.spatial):
-                res = [upsample(diffs[kk].sum(dim=1,keepdim=True), out_HW=in0.shape[2:]) for kk in self.L]  # HYUNG-KWON KO ADDED
+                res = [upsample(diffs[kk].sum(dim=1,keepdim=True), out_HW=in0.shape[2:]) for kk in range(self.L)]
             else:
-                res = [spatial_average(diffs[kk].sum(dim=1,keepdim=True), keepdim=True) for kk in self.L]  # HYUNG-KWON KO ADDED
+                res = [spatial_average(diffs[kk].sum(dim=1,keepdim=True), keepdim=True) for kk in range(self.L)]
 
         val = res[0]
-        for l in range(1,len(self.L)):  # HYUNG-KWON KO ADDED
+        for l in range(1,self.L):
             val += res[l]
         
         if(retPerLayer):

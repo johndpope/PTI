@@ -1,5 +1,6 @@
 import abc
 import os
+import pickle
 from argparse import Namespace
 import wandb
 import os.path
@@ -9,7 +10,7 @@ from torchvision import transforms
 from lpips import LPIPS
 from training.projectors import w_projector
 from configs import global_config, paths_config, hyperparameters
-from criteria.losses import l1_loss, l2_loss
+from criteria import l2_loss
 from models.e4e.psp import pSp
 from utils.log_utils import log_image_from_w
 from utils.models_utils import toogle_grad, load_old_G
@@ -33,7 +34,7 @@ class BaseCoach:
             transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
 
         # Initialize loss
-        self.lpips_loss = LPIPS(net=hyperparameters.lpips_type, lpips_layers=hyperparameters.pt_lpips_layers).to(global_config.device).eval()
+        self.lpips_loss = LPIPS(net=hyperparameters.lpips_type).to(global_config.device).eval()
 
         self.restart_training()
 
@@ -46,9 +47,6 @@ class BaseCoach:
         # Initialize networks
         self.G = load_old_G()
         toogle_grad(self.G, True)
-
-        print("[INFO] G:")
-        print(self.G)
 
         self.original_G = load_old_G()
 
@@ -88,16 +86,13 @@ class BaseCoach:
     def calc_inversions(self, image, image_name):
 
         if hyperparameters.first_inv_type == 'w+':
-            print("[INFO] Use w+ space")
             w = self.get_e4e_inversion(image)
 
         else:
-            print("[INFO] Use w space")
             id_image = torch.squeeze((image.to(global_config.device) + 1) / 2) * 255
             w = w_projector.project(self.G, id_image, device=torch.device(global_config.device), w_avg_samples=600,
                                     num_steps=hyperparameters.first_inv_steps, w_name=image_name,
                                     use_wandb=self.use_wandb)
-            print("[INFO] w.shape: ", w.shape)
 
         return w
 
@@ -110,18 +105,14 @@ class BaseCoach:
 
         return optimizer
 
-    def calc_loss(self, i, generated_images, real_images, log_name, new_G, use_ball_holder, w_batch):
+    def calc_loss(self, generated_images, real_images, log_name, new_G, use_ball_holder, w_batch):
         loss = 0.0
-        l1_loss_val = 1.0  # HYUNG-KWON KO CHANGED
-        l2_loss_val = 1.0  # HYUNG-KWON KO CHANGED
-        loss_lpips = 1.0  # HYUNG-KWON KO CHANGED
 
         if hyperparameters.pt_l2_lambda > 0:
-            l2_loss_val = l2_loss(generated_images, real_images)
+            l2_loss_val = l2_loss.l2_loss(generated_images, real_images)
             if self.use_wandb:
                 wandb.log({f'MSE_loss_val_{log_name}': l2_loss_val.detach().cpu()}, step=global_config.training_step)
             loss += l2_loss_val * hyperparameters.pt_l2_lambda
-
         if hyperparameters.pt_lpips_lambda > 0:
             loss_lpips = self.lpips_loss(generated_images, real_images)
             loss_lpips = torch.squeeze(loss_lpips)
@@ -129,35 +120,18 @@ class BaseCoach:
                 wandb.log({f'LPIPS_loss_val_{log_name}': loss_lpips.detach().cpu()}, step=global_config.training_step)
             loss += loss_lpips * hyperparameters.pt_lpips_lambda
 
-        if hyperparameters.pt_l1_lambda > 0:
-            l1_loss_val = l1_loss(generated_images, real_images)
-            if self.use_wandb:
-                wandb.log({f'L1_loss_val_{log_name}': l1_loss_val.detach().cpu()}, step=global_config.training_step)
-            loss += l1_loss_val * hyperparameters.pt_l1_lambda
-
         if use_ball_holder and hyperparameters.use_locality_regularization:
             ball_holder_loss_val = self.space_regulizer.space_regulizer_loss(new_G, w_batch, use_wandb=self.use_wandb)
             loss += ball_holder_loss_val
 
-        # if i > 800:
-        #     loss_lpips = self.lpips_loss(generated_images, real_images)
-        #     loss_lpips = torch.squeeze(loss_lpips)
-        #     if self.use_wandb:
-        #         wandb.log({f'LPIPS_loss_val_{log_name}': loss_lpips.detach().cpu()}, step=global_config.training_step)
-        #     loss += loss_lpips * hyperparameters.pt_lpips_lambda
-        # l2_loss_val = l2_loss(generated_images, real_images)
-        # if self.use_wandb:
-        #     wandb.log({f'MSE_loss_val_{log_name}': l2_loss_val.detach().cpu()}, step=global_config.training_step)
-        # loss += l2_loss_val * hyperparameters.pt_l2_lambda
-
-        return loss, l1_loss_val, l2_loss_val, loss_lpips
+        return loss, l2_loss_val, loss_lpips
 
     def forward(self, w):
         generated_images = self.G.synthesis(w, noise_mode='const', force_fp32=True)
 
         return generated_images
 
-    def initialize_e4e(self):  # HYUNG-KWON KO CHANGED
+    def initilize_e4e(self):
         ckpt = torch.load(paths_config.e4e, map_location='cpu')
         opts = ckpt['opts']
         opts['batch_size'] = hyperparameters.train_batch_size
